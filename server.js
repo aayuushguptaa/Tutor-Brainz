@@ -164,9 +164,9 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: 'Internal server error' });
 });
 
-app.get('/', (req, res) => {
-  res.send('🎉 Tutor Brainz API is live!');
-});
+// app.get('/', (req, res) => {
+//   res.send('🎉 Tutor Brainz API is live!');
+// });
 
 // 404 Handler
 app.use((req, res) => {
