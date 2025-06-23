@@ -162,6 +162,11 @@ app.use((err, req, res, next) => {
 app.get('/', (req, res) => {
   res.send('🎉 Tutor Brainz API is live!');
 });
+// Excel Integration Endpoint
+app.get('/', (req, res) => {
+  res.send('🎉 Tutor Brainz API is live!');
+});
+
 
 // 404 Handler
 app.use((req, res) => {
