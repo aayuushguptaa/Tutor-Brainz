@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Metadata and Styles -->
+  <meta charset="UTF-8">
+  <title>Admin Dashboard - Tutor Brainz</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Times New Roman', serif;
+      background-color: #f5f7fa; /* Light blue-gray background */
+      color: #333; /* Dark gray text */
+      margin: 40px;
+      text-align: center; /* Center align all content */
+      font-size: 18px; /* Increase base font size */
+    }
+    h1 {
+      font-size: 2.5em; /* Increase header font size */
+    }
+    button {
+      background-color: #001f3f; /* Deep blue button */
+      color: #ffffff; /* White text */
+      border: none;
+      padding: 30px 30px;
+      cursor: pointer;
+      border-radius: 4px;
+      font-weight: bold;
+      font-family: 'Times New Roman', serif;
+      margin: 10px; /* Add spacing between buttons */
+      font-size: 1.5em; /* Increase button font size */
+    }
+    button:hover {
+      background-color: #000a29; /* Darker deep blue on hover */
+    }
+
+    @media (max-width: 768px) {
+      button {
+        width: 100%; /* Full width buttons for smaller screens */
+        font-size: 1em;
+        padding: 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      button {
+        font-size: 0.9em;
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <h1>Admin Dashboard - Tutor Brainz</h1>
+  </header>
+
+  <!-- Admin Dashboard Buttons -->
+  <div>
+    <button onclick="location.href='tutor-registrations.html'">View Tutors</button>
+    <button onclick="location.href='demo-bookings.html'">View Demos</button>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin - Demo Bookings</title>
+  <style>
+    body {
+      font-family: 'Times New Roman', serif;
+      background-color: #f5f7fa; /* Light blue-gray background */
+      color: #333; /* Dark gray text */
+      margin: 40px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background-color: #fff; /* White background */
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+      font-family: 'Times New Roman', serif;
+    }
+    table, th, td {
+      border: 1px solid #ddd; /* Light gray border */
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+    }
+    th {
+      background-color: #002855; /* Deep navy blue */
+      color: #fff; /* White text */
+    }
+    button {
+      background-color: #ffd700; /* Gold button */
+      color: #002855; /* Deep navy blue text */
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+      border-radius: 4px;
+      font-weight: bold;
+      font-family: 'Times New Roman', serif;
+    }
+    button:hover {
+      background-color: #e6c200; /* Slightly darker gold */
+    }
+    #loading {
+      font-size: 18px;
+      font-weight: bold;
+      color: #555; /* Medium gray text */
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Admin - Demo Bookings</h1>
+
+  <div id="loading">Loading demo bookings...</div>
+  <table id="demoTable" style="display:none;">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Subject</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="demoTableBody"></tbody>
+  </table>
+
+  <script>
+    /**
+     * Admin Dashboard - Demo Bookings View
+     * ----------------------------------
+     * Displays and manages demo booking records
+     * 
+     * Features:
+     * - Fetch and display demo bookings
+     * - Delete bookings
+     * - Responsive table layout
+     */
+
+    const apiBaseURL = 'http://localhost:5000';
+
+    /**
+     * Loads demo bookings from the backend
+     * Displays them in a formatted table
+     */
+    function loadDemos() {
+      fetch(`${apiBaseURL}/api/demos`)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
+        .then(data => {
+          const table = document.getElementById('demoTable');
+          const tableBody = document.getElementById('demoTableBody');
+          const loading = document.getElementById('loading');
+
+          loading.style.display = 'none';
+          table.style.display = 'table';
+
+          tableBody.innerHTML = '';
+
+          if (data.length === 0) {
+            tableBody.innerHTML = '<tr><td colspan="5">No demo bookings found.</td></tr>';
+            return;
+          }
+
+          data.forEach(demo => {
+            const row = document.createElement('tr');
+
+            row.innerHTML = `
+              <td>${demo.name || 'N/A'}</td>
+              <td>${demo.email || 'N/A'}</td>
+              <td>${demo.phone || 'N/A'}</td>
+              <td>${demo.subject || 'N/A'}</td>
+              <td><button onclick="deleteDemo('${demo._id}')">Delete</button></td>
+            `;
+
+            tableBody.appendChild(row);
+          });
+        })
+        .catch(error => {
+          console.error('Error loading demos:', error);
+          document.getElementById('loading').innerText = 'Failed to load data.';
+        });
+    }
+
+    function deleteDemo(id) {
+      if (confirm('Are you sure you want to delete this booking?')) {
+        fetch(`${apiBaseURL}/api/demos/${id}`, { method: 'DELETE' })
+          .then(response => response.json())
+          .then(data => {
+            alert('Demo booking deleted successfully');
+            loadDemos(); // Reload the table
+          })
+          .catch(error => {
+            console.error('Error deleting demo:', error);
+            alert('Failed to delete demo booking');
+          });
+      }
+    }
+
+    window.onload = loadDemos;
+  </script>
+
+</body>
+</html>

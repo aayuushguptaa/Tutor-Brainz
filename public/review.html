@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore insightful  posts on education, learning tips, and parental guidance from Tutor Brainz." />
+
+  <meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://www.tutorbrainz.com/review" />
+
+  <title>Tutor Brainz Review | Learning Tips & Insights</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Times', sans-serif;
+      background-color: #ffffff;
+    }
+
+    h3, h4 {
+      font-family: 'Comic Neue', cursive;
+    }
+    h2 {
+      font-family: 'Comic Neue', cursive;
+      font-size: 40px;
+      font-weight: bold;
+      color: #001f3f;
+      text-align: center;
+      margin-top: 20px;
+    }
+    @media (max-width: 768px) {
+       h2 {
+      font-family: 'Comic Neue', cursive;
+      font-size: 25px;
+      font-weight: bolder;
+      color: #001f3f;
+    }
+  }
+
+    .blog-header {
+      background-color: #001f3f;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+    }
+    .blog-header h1 {
+      font-size: 40px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #ffffff;
+      text-align: center;
+    }
+    @media (max-width: 768px) {
+      .blog-header {
+        padding: 10px 10px;
+      }
+      .blog-header h1 {
+        font-size: 30px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+
+    .nav-link {
+      margin-right: 5px;
+      margin-left: 5px;
+      font-weight: 500;
+      font-size: 20px;
+      color: #ffffff;
+      text-decoration: none;
+      font-family: 'Poppins', sans-serif;
+      padding: 8px 16px;
+      border-radius: 8px;
+      transition: background-color 0.3s, color 0.3s;
+      display: inline-block;
+    }
+    .nav-link:hover {
+      background-color: #ffffff;
+      color: #333333;
+    }
+    @media (max-width: 768px) {
+      .nav-link {
+        font-size: 18px;  
+        padding: 0%;
+        display: none;
+      }
+    }
+
+    .review-card {
+      border-radius: 15px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .review-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .review-content {
+      padding: 20px;
+    }
+  .whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 30px;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+  }
+
+  .whatsapp-float:hover {
+    background-color: #20b358;
+  }
+
+  .whatsapp-float img {
+    width: 28px;
+    height: 28px;
+    margin-right: 10px;
+  }
+
+  @media (max-width: 768px) {
+    .whatsapp-float {
+      font-size: 14px;
+      padding: 8px 12px;
+      bottom: 15px;
+      right: 15px;
+    }
+
+    .whatsapp-float img {
+      width: 24px;
+      height: 24px;
+      margin-right: 8px;
+    }
+  }
+    .btn-read {
+      background-color: #000000;
+      color: white;
+      border-radius: 20px;
+    }
+
+    .btn-read:hover {
+      background-color: #82d6d6;
+    }
+  </style>
+
+<style>
+  /* Place title and hamburger in one line */
+  .header-flex {
+    display: flex;
+    align-items: baseline;
+    justify-content: stretch;
+  }
+
+  /* Hide hamburger by default (for large screens) */
+  .menu-wrapper {
+    display: none;
+  }
+
+  /* Show hamburger only on small screens */
+  @media (max-width: 768px) {
+    .nav-link {
+      display: none; /* hide nav links on small screens */
+    }
+
+    .menu-wrapper {
+      display: inline-block;
+      position: relative;
+    }
+
+    .hamburger {
+      font-size: 30px;
+      color: #ffffff;
+      background-color: transparent;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .options-menu {
+      display: none;
+      width: 170px;
+      position: absolute;
+      text-align: left;
+      top: 40px;
+      left: 7px;
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      z-index: 100;
+    }
+
+    .options-menu a {
+      display: block;
+      padding: 8px;
+      text-decoration: none;
+      color: #000000;
+    }
+
+    .options-menu a:hover {
+      background-color: #ffffff;
+    }
+  }
+  /* Star Rating Styles */
+  .star {
+    font-size: 24px;
+    cursor: pointer;
+    color: #ccc;
+  }
+
+  .star.selected,
+  .star:hover,
+  .star:hover ~ .star {
+    color: gold;
+  }
+
+
+
+
+    /* Footer styling */
+    footer {
+      background-color: #001f3f; /* Deep blue */
+      color: #ffffff; /* White text */
+      position: relative;
+      bottom: 0;
+      width: 100%;
+      font-family: 'Poppins', sans-serif;
+    }
+    footer h3 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 300; /* Semi-bold */
+    }
+    footer ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    footer ul li {
+      margin-bottom: 10px;
+    }
+    footer a {
+      color: #ffffff; /* White text */
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+footer {
+      background-color: #001f3f; /* Deep blue */
+      color: #ffffff; /* White text */
+      text-align: center;
+      padding: 10px;
+    }
+    @media (max-width: 480px) {
+      footer {
+        font-size: 0.8em;
+        gap: 10px; /* Smaller gap between sections */
+      }   
+      footer h3 {
+        font-size: 1.2em; /* Smaller header font size */
+        margin-bottom: 0%;
+
+      }
+      footer ul li {
+        margin-bottom: 2px; /* Smaller spacing between items */
+      }
+    }
+
+
+  
+</style>
+
+
+</head>
+<body>
+    <!-- Header Section -->
+  <header class="blog-header">
+    <div class="header-flex">
+      <div class="menu-wrapper">
+        <button class="hamburger" onclick="toggleOptions()">&#9776;</button>
+        <div class="options-menu" id="optionsMenu">
+          <a href="home.html"><img width="25px" src="images/home_icon.png" alt="Home" style="margin-right: 10px;" />Home</a>
+          <a href="syllabus.html"><img width="25px" src="images/Syllabus_Icon.png" alt="Home" style="margin-right: 10px;" />Syllabus</a>
+          <a href="achievements.html"><img width="25px" src="images/achievements_icon.png" alt="Achievements" style="margin-right: 10px;" />Achievements</a>
+          <a href="demo.html"><img width="25px" src="images/Book_Demo_Icon.png" alt="Home" style="margin-right: 10px;" />Book Demo</a>
+        </div>
+      </div>
+      <h1>TUTOR BRAINZ</h1>
+    </div>
+
+    <!-- <h4>Explore expert advice, study hacks, and resources to help your child thrive.</h4> -->
+<!-- Nav links for desktop -->
+    <div class="nav-links">
+      <a href="home.html" class="nav-link">HOME</a>
+      <a href="syllabus.html" class="nav-link">SYLLABUS</a>
+      <a href="achievements.html" class="nav-link">ACHIEVEMENTS</a>
+    </div>
+
+  </header>
+  
+  <h2 style="text-align: center; padding-top: 20px; font-weight: bolder;">Learn smarter, from real stories.</h2>
+  
+
+<main class="container py-5">
+  <div class="row g-4">
+
+    <!-- Review Card -->
+    <div class="col-md-6 col-lg-4">
+      <div class="review-card info-grid-item" style="background-color: #c2daff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        <div class="review-content">
+          <h5 style="font-weight: bold;">Sonia Mehta</h5>
+          <p style="font-style: italic;">Parent of Class 7 Student</p>
+          <div class="stars mb-2">★★★★★</div>
+          <p style="text-align: justify;">“Tutor Brainz has truly transformed the way my child learns. The tutors are dedicated and patient. We've seen real progress in just 3 months.”</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Review Card -->
+    <div class="col-md-6 col-lg-4">
+      <div class="review-card info-grid-item" style="background-color: #cbfdff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        <div class="review-content">
+          <h5 style="font-weight: bold;">Ravi Shankar</h5>
+          <p style="font-style: italic;">Parent of Class 5 Student</p>
+          <div class="stars mb-2">★★★★☆</div>
+          <p style="text-align: justify;">“The flexibility to schedule demo sessions and the support from the team is amazing. My daughter loves her classes!”</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Review Card -->
+    <div class="col-md-6 col-lg-4">
+      <div class="review-card info-grid-item" style="background-color: #c2daff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        <div class="review-content">
+          <h5 style="font-weight: bold;">Anjali Varma</h5>
+          <p style="font-style: italic;">Parent of Class 9 Student</p>
+          <div class="stars mb-2">★★★★★</div>
+          <p style="text-align: justify;">“Highly recommend Tutor Brainz! Their teaching methods are modern and effective, especially for teenagers facing academic pressure.”</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+<div class="text-center mt-4">
+  <h4>Video Testimonials</h4>
+    <video width="300" height="180" controls><source src="images/Teaching.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+</div>
+
+
+<div class="mt-5 p-4" style="background-color: #c2daff; border-radius: 10px;">
+  <h4 class="text-center">Leave a Review</h4>
+  <form id="reviewForm">
+    <div class="mb-3">
+      <label class="form-label">Your Name</label>
+      <input type="text" name="name" class="form-control" placeholder="Enter your name" required>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Rating</label>
+      <div id="starRating">
+        <span class="star" data-value="1">⭐</span>
+        <span class="star" data-value="2">⭐</span>
+        <span class="star" data-value="3">⭐</span>
+        <span class="star" data-value="4">⭐</span>
+        <span class="star" data-value="5">⭐</span>
+      </div>
+      <input type="hidden" name="rating" id="ratingInput" required>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Your Review</label>
+      <textarea name="review" class="form-control" rows="4" placeholder="Share your experience..." required></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-read">Submit Review</button>
+  </form>
+</div>
+
+</main>
+  
+
+
+  <!-- WhatsApp Chat Support Icon -->
+<a href="https://wa.me/918248544385?text=Hello%2C%20I%20would%20love%20to%20know%20more?" 
+   class="whatsapp-float" 
+   target="_blank" 
+   rel="noopener noreferrer"
+   aria-label="Chat with us on WhatsApp">
+  <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp Chat">
+  <span>WhatsApp Us</span>
+</a>
+
+   <!-- /* Footer Section */ -->
+  <footer>
+    <div style="display: flex; justify-content: space-around; flex-wrap: nowrap; padding: 0%; gap: 5px;">
+      <div>
+        <h3 style="color: #ffffff; text-align: left;">About us</h3>
+        <ul style="list-style: none; padding: 0; text-align:left;">
+          <li><a href="home.html#how-it-works">How it Works</a></li>
+          <li><a href="#">Affiliate Program</a></li>
+          <li><a href="#">Education Partners</a></li>
+          <li><a href="#">We are Hiring!</a></li>
+          <li><a href="#">Become a Teacher</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="color: #ffffff;">Support</h3>
+        <p style="color: #ffffff; margin-bottom: 0%;">Need any Help?</p>
+        <p style="margin-bottom: 0%;"><a href="mailto:tutorbrainz.pvt@gmail.com">tutorbrainz.pvt@gmail.com</a></p>
+        <br>
+        <h3 style="color: #ffffff; margin-top: 0%; margin-bottom: 5%;">Contact</h3>
+        <p style="color: #ffffff; margin-bottom: 0%;">+91 82485 44385</p>
+        <p style="color: #ffffff; margin-bottom: 0%;">+91 87874 52406</p>
+        <p style="color: #ffffff; margin-bottom: 0%;">Banglore, Karnataka</p>
+      </div>
+      <div>
+        <h3 style="color: #ffffff; text-align: justify;">Follow us</h3>
+        <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; align-items: flex-start;">
+          <li>
+            <a href="https://www.instagram.com/tutor_brainz/" target="_blank" style="display: flex; align-items: center; text-decoration: none;">
+              <img src="images/Instagram.jpg" alt="Instagram" style="width: 20px; height: 20px; margin-right: 5px;">
+              Instagram
+            </a>
+          </li>
+          <li>
+            <a href="#" style="display: flex; align-items: center; text-decoration: none;">
+              <img src="images/Facebook.jpg" alt="Facebook" style="width: 20px; height: 20px; margin-right: 5px;">
+              Facebook
+            </a>
+          </li>
+          <li>
+            <a href="#" style="display: flex; align-items: center; text-decoration: none;">
+              <img src="images/Youtube.jpg" alt="YouTube" style="width: 20px; height: 20px; margin-right: 5px;">
+              YouTube
+            </a>
+          </li>
+          <li>
+            <a href="#" style="display: flex; align-items: center; text-decoration: none;">
+              <img src="images/Twitter.jpg" alt="Twitter" style="width: 20px; height: 20px; margin-right: 5px;">
+              Twitter
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <p style="color: #ffffff;font-weight: bold;font-size: 1.2rem;">&copy; 2025 Tutor Brainz. All rights reserved.</p>
+  </footer>
+
+
+
+<script>
+  function toggleOptions() {
+    const menu = document.getElementById("optionsMenu");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+  }
+
+  // Close menu when clicking outside
+  window.addEventListener("click", function(event) {
+    const menu = document.getElementById("optionsMenu");
+    const wrapper = document.querySelector(".menu-wrapper");
+    if (!wrapper.contains(event.target)) {
+      menu.style.display = "none";
+    }
+  });
+</script>
+
+
+
+<!-- JS to handle star interaction and submission -->
+<script>
+  const stars = document.querySelectorAll('#starRating .star');
+  const ratingInput = document.getElementById('ratingInput');
+
+  stars.forEach((star, index) => {
+    star.addEventListener('click', () => {
+      ratingInput.value = star.getAttribute('data-value');
+      stars.forEach((s, i) => {
+        s.classList.toggle('selected', i < ratingInput.value);
+      });
+    });
+
+    // Optional: show hover effect
+    star.addEventListener('mouseover', () => {
+      stars.forEach((s, i) => {
+        s.style.color = i <= index ? 'gold' : '#ccc';
+      });
+    });
+
+    star.addEventListener('mouseout', () => {
+      stars.forEach((s, i) => {
+        s.style.color = i < ratingInput.value ? 'gold' : '#ccc';
+      });
+    });
+  });
+
+  // Handle form submission
+  document.getElementById('reviewForm').addEventListener('submit', function (e) {
+    e.preventDefault(); // prevent actual form submission
+
+    const name = this.name.value;
+    const rating = this.rating.value;
+    const review = this.review.value;
+
+    if (!rating) {
+      alert("Please select a rating.");
+      return;
+    }
+
+    // Example output (you can replace this with real backend logic)
+    console.log("Review submitted:", { name, rating, review });
+    alert("Thank you for your review, " + name + "!");
+    this.reset();
+    ratingInput.value = '';
+    stars.forEach(s => s.classList.remove('selected'));
+  });
+
+</script>
+
+
+</body>
+</html>

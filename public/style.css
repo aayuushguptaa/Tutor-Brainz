@@ -1,0 +1,565 @@
+/* Reset and Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Common Variables */
+:root {
+  --primary-color: #081747;
+  --secondary-color: #000a29;
+  --text-color: #ffffff;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+/* Global Styles */
+body {
+  font-family: 'Times New Roman', serif;
+  background-color: #ffffff; 
+  color: var(--text-color); /* White text */
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;  /* Prevent horizontal scroll */
+  width: 100%;
+}
+
+header, footer {
+  background-color: var(--secondary-color); /* Dark deep blue */
+  color: var(--text-color); /* White text */
+  text-align: center;
+  padding: 20px;
+  box-shadow: var(--box-shadow);
+}
+
+/* Button Styles */
+button {
+  background-color: var(--text-color); /* White button */
+  color: var(--primary-color); /* Deep blue text */
+  border: 2px solid transparent; /* Transparent border to maintain size */
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-block; /* Ensure consistent layout */
+  transition: var(--transition); /* Smooth transitions */
+}
+
+button:hover {
+  background-color: var(--primary-color); /* Deep blue on hover */
+  color: var(--text-color); /* White text on hover */
+  box-shadow: var(--box-shadow); /* Add shadow without changing size */
+  border: 2px solid #001f3f; /* Add border without changing dimensions */
+}
+
+a {
+  color: #ffffff; /* Deep blue links */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+input, textarea, select {
+  background-color: var(--text-color); /* White input fields */
+  color: var(--primary-color); /* Deep blue text */
+  border: 1px solid var(--primary-color);
+  padding: 8px;
+  border-radius: 4px;
+}
+
+h1, h2, h3 {
+  color: #00013b  ; /* Dark blue */
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9em;
+}
+
+/* Header styling */
+header h1 {
+  margin: 0;
+  font-size: 2.8em;
+  font-weight: bold;
+}
+
+header nav a {
+  color: #90caf9; /* Light blue links */
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 1em;
+}
+
+header nav a:hover {
+  text-decoration: none;
+}
+
+/* Main section styling */
+main {
+  padding: 50px;
+  text-align: center;
+}
+
+main section {
+  font-family: 'Comic Neue', serif;
+  /* background: linear-gradient(to bottom, #446ec9,  #02043d); Subtle gradient */
+  border: 1px solid #ffffff; /* Light blue border */
+  border-radius: 12px;
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.15); /* Luxurious shadow */
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+main section h2 {
+  color: #0d47a1; /* Dark blue */
+  font-size: 2em;
+  font-weight: bold;
+}
+
+main section p {
+  color: var(--primary-color); /* Deep blue text */
+  font-size: 1.2em;
+}
+
+main section button {
+  background: linear-gradient(to right, #00244d, #095292); /* Gradient button */
+  color: var(--text-color); /* White text */
+  border: none;
+  padding: 12px 25px;
+  font-size: 1.2em;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: var(--transition);
+
+}
+
+main section button:hover {
+  background: linear-gradient(to right, var(--text-color), var(--text-color)); /* Darker gradient */
+}
+
+/* Section background variations */
+main section:nth-of-type(1) {
+  background: linear-gradient(to bottom, #ffffff, #ffffff); /* Blue to dark blue */
+}
+
+main section:nth-of-type(2) {
+  background: linear-gradient(to bottom, #ffffffa4, #ffffff96);
+}
+
+
+
+/* Footer styling */
+footer {
+  font-family: 'Times New Roman', serif;
+  background: linear-gradient(to right, #01131f, #16254d); /* Premium blue gradient */
+  color: var(--text-color); /* White text */
+  text-align: center;
+  padding: 15px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.tutor-slider {
+  margin: 410px auto; /* Center the block horizontally */
+  max-width: 100%; /* Changed from 940px to be responsive */
+  display: grid; /* Use grid layout */
+  grid-template-columns: repeat(3, 1fr); /* 3 columns per row */
+  grid-template-rows: repeat(2, auto); /* 2 rows */
+  gap: 20px; /* Space between items */
+  padding: 20px;
+  background-color: var(--primary-color); /* Light teal background */
+  border-radius: 16px; /* Rounded corners */
+  box-shadow: var(--box-shadow); /* Subtle shadow */
+  box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+.tutor-slider h2 {
+  grid-column: span 3; /* Make the header span all columns */
+  text-align: center;
+  font-size: 1.8em;
+  color: #010f35; /* Dark teal */
+  margin-bottom: 20px;
+}
+
+.slider-item {
+  width: 100%; /* Full width of the grid cell */
+  background-color: var(--text-color); /* White background */
+  border: 1px solid var(--primary-color); /* Light teal border */
+  border-radius: 16px; /* Rounded corners */
+  box-shadow: var(--box-shadow); /* Subtle shadow */
+  text-align: center;
+  padding: 20px;
+  font-family: 'Times New Roman', serif;
+  font-weight: bold;
+  color: var(--primary-color); 
+}
+
+.tutor-image {
+  width: 150px; /* Circular image size */
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%; /* Makes the image circular */
+  margin: 15px auto;
+  border: 3px solid #ffffff; /* Light teal border */
+}
+
+slider-item h3 {
+  font-size: 1.2em; /* Name font size */
+  margin: 10px 0 5px;
+}
+
+slider-item p {
+  font-size: 1em; /* Description font size */
+  color: var(--primary-color); /* Medium teal text */
+  margin: 5px 0;
+}
+
+.slider-item .rating {
+  font-size: 1em;
+  color: var(--primary-color); /* Dark teal */
+  margin: 10px 0;
+  font-weight: normal;
+}
+
+.tutor-sections-container {
+  display: flex; /* Arrange sections side by side */
+  gap: 0px; /* Space between sections */
+  justify-content: center; /* Center the sections horizontally */
+  margin: 40px auto;
+  max-width: 100%; /* Changed from 1700px to prevent overflow */
+  padding: 0 20px; /* Add padding for content spacing */
+}
+
+.tutor-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns for asymmetry */
+  grid-auto-rows: auto; /* Adjust row height automatically */
+  gap: 20px; /* Space between items */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tutor-grid .slider-item {
+  width: 100%; /* Full width of the grid cell */
+  background-color: var(--text-color); /* White background */
+  border: 1px solid var(--primary-color); /* Light teal border */
+  border-radius: 16px; /* Rounded corners */
+  box-shadow: var(--box-shadow); /* Subtle shadow */
+  text-align: center;
+  padding: 0px;
+  font-family: 'Times New Roman', serif;
+  font-weight: bold;
+  color: #004d40; /* Dark teal */
+}
+
+.tutor-grid .slider-item:nth-child(1) {
+  background-color: #f9f9f9; /* Light gray */
+}
+
+.tutor-grid .slider-item:nth-child(2) {
+  background-color: #e3f2fd; /* Light blue */
+}
+
+.tutor-grid .slider-item:nth-child(3) {
+  background-color: #fce4ec; /* Light pink */
+}
+
+.tutor-grid .slider-item:nth-child(4) {
+  background-color: #e8f5e9; /* Light green */
+}
+
+.tutor-grid .slider-item:nth-child(5) {
+  background-color: #fff3e0; /* Light orange */
+}
+.star-rating { /* Star rating styles */
+  color: #f5c518;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+
+.auth-buttons {
+  display: inline-block;
+  margin-top: 40px;
+  position: absolute;
+  top: 50px;
+  right: 50px; /* Align buttons to the top-right corner */
+}
+
+header {
+  text-align: center; /* Aligns .auth-buttons to the centre */
+}
+
+.auth-buttons button {
+  background-color: #1e3a96; /* Dark teal button */
+  color: var(--text-color); /* White text */
+  border: none;
+  padding: 8px 12px;
+  margin-left: 10px;
+  border-radius: 5px;
+  font-size: 0.9em;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: 'Times New Roman', serif;
+}
+
+.auth-buttons button:hover {
+  background-color: #1e3a96; /* Darker teal */
+}
+
+.account-icon {
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #003d33; /* Darker teal */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: var(--text-color); /* White text */
+  box-shadow: var(--box-shadow); /* Subtle shadow */
+}
+
+.account-icon:hover {
+  background-color: #003d33; /* Darker teal */
+}
+
+.login-link {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  color: #004d40; /* Dark teal */
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .tutor-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller screens */
+  }
+}
+
+input, select, textarea {
+  background-color: var(--text-color); /* Ensure white background for visibility */
+  color: var(--primary-color); /* Dark blue text */
+  border: 1px solid var(--primary-color); /* Light blue border */
+  border-radius: 6px;
+  padding: 10px;
+  width: 100%;
+  font-family: 'Times New Roman', serif;
+  font-size: 1em;
+  box-sizing: border-box; /* Ensure padding does not affect width */
+}
+
+input:disabled, select:disabled, textarea:disabled {
+  background-color: #f5f5f5; /* Light gray for disabled fields */
+  color: #9e9e9e; /* Gray text for disabled fields */
+  cursor: not-allowed;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #0d47a1; /* Dark blue border on focus */
+  outline: none;
+  box-shadow: 0 0 8px rgba(13, 71, 161, 0.5); /* Subtle blue glow */
+}
+
+/* Ensure no unintentional pointer-events or opacity issues */
+input, select, textarea {
+  pointer-events: auto; /* Ensure fields are clickable */
+  opacity: 1; /* Ensure fields are fully visible */
+}
+
+.account-container, .demo-form {
+  background-color: var(--text-color); /* White background */
+  color: var(--primary-color); /* Dark teal text */
+  border: 1px solid var(--primary-color); /* Light teal border */
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow); /* Subtle shadow */
+  padding: 20px;
+  font-family: 'Times New Roman', serif;
+}
+
+h2 {
+  color: #004d40; /* Dark teal */
+}
+
+/* Luxurious table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: linear-gradient(to bottom, var(--text-color), #e3f2fd); /* Subtle gradient */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Luxurious shadow */
+}
+
+table, th, td {
+  border: 1px solid #90caf9; /* Light blue border */
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+
+th {
+  background: linear-gradient(to right, #1565c0, #1e88e5); /* Gradient header */
+  color: var(--text-color); /* White text */
+  font-size: 1.2em;
+}
+
+td {
+  color: #0d47a1; /* Dark blue text */
+  font-size: 1em;
+}
+
+/* Header Styles */
+header {
+  background-color: #001f3f; /* Deep blue */
+  color: var(--text-color); /* White text */
+  text-align: center;
+  padding: 20px;
+  box-shadow: var(--box-shadow);
+}
+
+/* Helper Classes */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Ensure text remains readable on all backgrounds */
+main section h2,
+main section p,
+.tutor-section h2,
+tutor-section p {
+  color: #000140;
+  text-shadow:0px 0px 0px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px; /* Adjust font size for smaller screens */
+  }
+
+  header {
+    padding: 10px;
+  }
+
+  header h1 {
+    font-size: 1em; /* Smaller header font size */
+  }
+
+  section {
+    padding: 15px;
+    max-width: 90%;
+  }
+
+  button {
+    font-size: 1em;
+    padding: 10px 20px;
+  }
+
+  footer {
+    font-size: 0.9em;
+  }
+
+  .auth-buttons {
+    position: static; /* Remove absolute positioning */
+    margin-top: 10px; /* Add spacing below the header */
+    text-align: center; /* Center the button horizontally */
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 12px; /* Further reduce font size for very small screens */
+  }
+
+  header h1 {
+    font-size: 1em;
+  }
+
+  section {
+    padding: 10px;
+  }
+
+  button {
+    font-size: 0.9em;
+    padding: 8px 15px;
+  }
+
+  footer {
+    font-size: 0.8em;
+  }
+}
+
+/* Ensure images are fluid */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive typography and spacing */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+    padding: 10px;
+  }
+  header, footer, nav, section {
+    padding: 10px;
+  }
+  nav a {
+    margin: 0 5px;
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+    padding: 5px;
+  }
+  header, footer, nav, section {
+    padding: 5px;
+  }
+  nav a {
+    display: block;
+    margin: 5px 0;
+    font-size: 0.9em;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}

@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tutor Registration</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    
+    * {
+      box-sizing: border-box;
+    }
+    /* body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f4f6;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    } */
+
+    .container {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 600px;
+      width: 100%;
+      margin-left: 550px;
+      margin-right: 550px;
+      box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 6px;
+      color: #000000;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    select,
+    input[type="file"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 16px;
+      border: 1px solid #d1d5db;
+      border-radius: 6px;
+      background-color: #f9fafb;
+    }
+
+    input[type="checkbox"] {
+      margin-right: 6px;
+    }
+
+    .checkbox-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #081747;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #001f3f;
+}
+
+
+    @media (max-width: 1500px) {
+      .container {
+        padding: 20px;
+        margin-left: 0px; /* Adjust margin for smaller screens */
+      }
+    }
+
+
+
+  .whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 30px;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+  }
+
+  .whatsapp-float:hover {
+    background-color: #20b358;
+  }
+
+  .whatsapp-float img {
+    width: 28px;
+    height: 28px;
+    margin-right: 10px;
+  }
+
+  @media (max-width: 768px) {
+    .whatsapp-float {
+      font-size: 14px;
+      padding: 8px 12px;
+      bottom: 15px;
+      right: 15px;
+    }
+
+    .whatsapp-float img {
+      width: 24px;
+      height: 24px;
+      margin-right: 8px;
+    }
+  }
+
+
+    /* Base Styles */
+        body {
+            font-family: 'Nunito', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff; /* Replace background image with a plain color */
+            color: #ffffff; /* White text for better contrast */
+        }
+    .nav-link {
+      margin-right: 5px;
+      margin-left: 5px;
+      font-weight: 600;
+      font-size: 20px;
+      color: #ffffff;
+      text-decoration: none;
+      font-family: 'Poppins', sans-serif;
+      padding: 8px 16px;
+      border-radius: 8px;
+      transition: background-color 0.3s, color 0.3s;
+      display: inline-block;
+    }
+    .nav-link:hover {
+      background-color: #ffffff;
+      color: #333333;
+    }
+        
+        /* Form Container Styles */
+        .demo-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+        .demo-form {
+            max-width: 700px;
+            margin: px auto;
+            padding: 20px;
+            background-color: rgb(255, 255, 255); /* Add transparency to the form background */
+            border: 1px solid #ffffff; /* Deep blue border */
+            border-radius: 8px;
+            box-shadow: 0px 0px 0px 0px rgb(131 116 136);
+            color: #081747; /* Deep blue text */
+            flex: 1;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #081747; /* Deep blue */
+        }
+        .form-group input,
+        .form-group select {
+            width: 60%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .form-group-inline {
+            display: flex;
+            gap: 10px;
+        }
+        .form-group-inline select {
+            flex: 1;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #081747; /* Deep blue */
+            color: #ffffff; /* White text */
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #001f3f; /* Darker deep blue */
+        }
+        header h1 {
+            color: #ffffff; /* White text */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1199px) {
+            .demo-form {
+                width: 90%; /* Adjust form width for smaller screens */
+                margin: 20px auto;
+            }
+
+            .form-group input,
+            .form-group select {
+                width: 100%; /* Full width inputs for mobile */
+            }
+
+            button {
+                font-size: 1em;
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .demo-form {
+                padding: 15px;
+            }
+
+            button {
+                font-size: 0.9em;
+                padding: 8px;
+            }
+        }
+        
+
+header h1 {
+    font-family: "Andika", serif; /* Special and premium font */
+    font-size: 3em; /* Adjust font size for emphasis */
+    color: #ffffff; /* Deep blue for premium look */
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 0%; /* Remove top margin for better alignment */
+    margin-bottom: 0%; /* Remove bottom margin for better alignment */
+}
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em; /* Slightly smaller on smaller screens */
+        margin-top: 0%; /* Remove top margin on smaller screens */
+        margin-bottom: 0%; /* Remove bottom margin on smaller screens */
+    }
+}
+/* Header must be relative for absolute children */
+header {
+    position: relative;
+    background-color: #001f3f; /* Deep navy blue */
+    padding-bottom: 10px; /* Add bottom padding to prevent overlap */
+}
+
+/* Tutor Registration Button */
+.header-tutor-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 10;
+    white-space: nowrap;
+}
+
+/* Hover effect */
+.header-tutor-btn:hover {
+    background-color: #ffffff;
+    transform: scale(1.05);
+}
+
+/* Responsive fix for mobile */
+@media (max-width: 2000px) {
+    .header-tutor-btn {
+        position: static;
+        display: inline-block;
+        margin-top: 0px;
+        margin-left: 0;
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+
+    header {
+        text-align: center;
+        padding-bottom: 10px; /* Adjust padding for mobile */
+    }
+}
+
+
+
+@media (max-width: 1500px) {
+  .container {
+    margin: 20px auto;
+    padding: 20px;
+    width: 90%;
+  }
+
+  .container input[type="text"],
+  .container input[type="email"],
+  .container input[type="file"],
+  .container select {
+    width: 100%;
+  }
+
+  .checkbox-group {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .container button {
+    font-size: 1rem;
+    padding: 12px;
+  }
+}
+
+
+
+.header-BookDemo-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 10;
+    white-space: nowrap;
+}
+
+/* Hover effect */
+.header-BookDemo-btn:hover {
+    background-color: #ffffff;
+    transform: scale(1.05);
+}
+
+/* Responsive fix for mobile */
+@media (max-width: 1199px) {
+    .header-BookDemo-btn {
+        position: static;
+        display: inline-block;
+        margin-top: 0px;
+        margin-left: 0;
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+}
+
+  </style>
+</head>
+<body>
+    <!-- Navigation Header -->
+    <!-- <div class="header-ribbon">
+        <p>Welcome to Tutor Brainz! </p>
+    </div> -->
+
+    <!-- Header Section -->
+  <header class="blog-header" style="color: #001f3f;">
+    <h1>TUTOR BRAINZ</h1>
+    <a href="home.html" class="nav-link">Home</a>
+    <a href="blog.html" class="nav-link">Blog</a>
+    <a href="syllabus.html" class="nav-link">Syllabus</a>
+    <a href="demo.html" class="header-BookDemo-btn">Book a Free Trial</a>
+    <!-- <a href="tutor-register.html" class="header-tutor-btn">Tutor Registration</a> -->
+  </header>
+    <main>
+        <div class="container">
+            <h1 style="color: #000000;text-align: left; font-family: Arial, Helvetica, sans-serif; font-weight: 100;">Register as a Tutor</h1>
+        <form id="tutorForm">
+            <label for="name">Name<span style="color:red">*</span></label>
+            <input type="text" id="name" name="name" required placeholder="Enter your full name">
+            <label for="email">Email <span style="color:red">*</span></label>
+            <input type="email" id="email" name="email" required placeholder="Enter your email address">
+            <label for="phone">Phone <span style="color:red">*</span></label>
+            <input type="text" id="phone" name="phone" required placeholder="Enter your phone number">
+            <label for="qualification">Qualification <span style="color:red">*</span></label>
+            <input type="text" id="qualification" name="qualification" required placeholder="Enter your highest qualification">
+
+            <label for="college">College <span style="color:red">*</span></label>
+            <input type="text" id="college" name="college" required placeholder="Enter your college name">
+
+            <label>Preferred Subjects</label>
+      <div class="checkbox-group">
+            <label><input type="checkbox" name="subjects" value="Mathematics">Mathematics</label>
+            <label><input type="checkbox" name="subjects" value="Science">Science</label>
+            <label><input type="checkbox" name="subjects" value="Language">Language</label>
+            <label><input type="checkbox" name="subjects" value="Scratch">Scratch</label>
+            <label><input type="checkbox" name="subjects" value="Python">Python</label>
+            <label><input type="checkbox" name="subjects" value="Java">Java</label>
+            <label><input type="checkbox" name="subjects" value="Others">Others</label>
+            <input type="text" id="Others" name="Others" required placeholder="If others, please specify otherwise fill N/A">
+      </div>
+
+        <label for="board">Board</label>
+        <select id="board" name="board" required>
+        <option value="">Select Board</option>
+        <option value="CBSE">CBSE</option>
+        <option value="ICSE">ICSE</option>
+        <option value="IGCSE">IGCSE</option>
+        <option value="USA curricula">USA curricula</option>
+        <option value="Canada curricula">Canada curricula</option>
+        <option value="Others">Others</option>
+      </select>
+
+      <button type="submit">Register</button>
+    </form>
+  </div>
+  </main>
+<!-- WhatsApp Chat Support Icon -->
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/918248544385?text=Hello%2C%20I%20would%20love%20to%20know%20more?" 
+   class="whatsapp-float" 
+   target="_blank" 
+   rel="noopener noreferrer"
+   aria-label="Chat with us on WhatsApp">
+  <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp Chat">
+  <span>WhatsApp Us</span>
+</a>
+  <!-- Footer Section -->
+    <footer style="background-color: #001f3f; color: #ffffff; padding: 20px; text-align: center; position: static;">
+        <div style="display: flex; justify-content: space-around; flex-wrap: wrap; padding: 20px;">
+            <div>
+                <h3 style="color: #ffffff;">About us</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="home.html#how-it-works" style="color: #add5e9; text-decoration: none;">How it Works</a></li>
+                    <li><a href="#" style="color: #add5e9; text-decoration: none;">Affiliate Program</a></li>
+                    <li><a href="#" style="color: #add5e9; text-decoration: none;">Education Partners</a></li>
+                    <li><a href="#" style="color: #add5e9; text-decoration: none;">We are Hiring!</a></li>
+                    <li><a href="#" style="color: #add5e9; text-decoration: none;">Become a Teacher</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 style="color: #ffffff;">Support</h3>
+                <p>Need any Help?</p>
+                <p><a href="mailto:tutorbrainz.pvt@gmail.com" style="color: #add5e9; text-decoration: none;">tutorbrainz.pvt@gmail.com</a></p>
+            </div>
+            <div>
+                <h3 style="color: #ffffff;">Follow us</h3>
+                <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; align-items: flex-start;">
+                    <li>
+                        <a href="https://www.instagram.com/tutor_brainz/" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: #add5e9;">
+                            <img src="images/Instagram.jpg" alt="Instagram" style="width: 20px; height: 20px; margin-right: 5px;">
+                            Instagram
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" style="display: flex; align-items: center; text-decoration: none; color: #add5e9;">
+                            <img src="images/Facebook.jpg" alt="Facebook" style="width: 20px; height: 20px; margin-right: 5px;">
+                            Facebook
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" style="display: flex; align-items: center; text-decoration: none; color: #add5e9;">
+                            <img src="images/Youtube.jpg" alt="YouTube" style="width: 20px; height: 20px; margin-right: 5px;">
+                            YouTube
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" style="display: flex; align-items: center; text-decoration: none; color: #add5e9;">
+                            <img src="images/Twitter.jpg" alt="Twitter" style="width: 20px; height: 20px; margin-right: 5px;">
+                            Twitter
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h3 style="color: #ffffff;">Contact</h3>
+                <p>+91 82485 44385</p>
+                <p>+91 87874 52406</p>
+                <p>Banglore, Karnataka</p>
+            </div>
+        </div>
+        <p style="color: #ffffff;font-weight: bold;font-size: 1.2rem;">&copy; 2025 Tutor Brainz. All rights reserved.</p>
+    </footer>
+
+<script>
+document.getElementById("tutorForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const othersField = document.getElementById("Others");
+  const othersChecked = Array.from(document.querySelectorAll('input[name="subjects"]:checked')).some(cb => cb.value === "Others");
+
+  // If "Others" is checked, ensure text is filled
+  if (othersChecked && othersField.value.trim() === "") {
+    alert("Please specify the 'Other' subject.");
+    othersField.focus();
+    return;
+  }
+
+  const subjects = Array.from(document.querySelectorAll('input[name="subjects"]:checked'))
+                        .map(cb => cb.value === "Others" ? othersField.value : cb.value);
+
+  const data = {
+    name: document.getElementById('name').value,
+    email: document.getElementById('email').value,
+    phone: document.getElementById('phone').value,
+    qualification: document.getElementById('qualification').value,
+    college: document.getElementById('college').value,
+    preferredSubjects: subjects,
+    board: document.getElementById('board').value
+  };
+
+  fetch('http://localhost:5000/api/tutors', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  }).then(async response => {
+    const result = await response.json();
+    if (response.ok) {
+      alert('Tutor registered successfully!');
+      window.location.href = 'home.html';
+      document.getElementById('tutorForm').reset();
+    } else {
+      alert('Registration failed: ' + result.error);
+    }
+  }).catch(error => {
+    alert('Error submitting form: ' + error.message);
+    console.error(error);
+  });
+});
+</script>
+
+</body>
+</html>
