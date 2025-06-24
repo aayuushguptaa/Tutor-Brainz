@@ -37,10 +37,14 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// ✅ Serve static files (CSS, images, other HTML)
+app.use(express.static(path.join(__dirname, 'public')));
+
 // Serve home.html for root
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'home.html'));
 });
+
 
 
 // Request Logging
