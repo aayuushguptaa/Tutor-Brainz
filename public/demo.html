@@ -1,655 +1,1191 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <!-- Meta Configuration -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Book a Demo - Tutor Brainz</title>
-    
+
     <!-- External Style Dependencies -->
     <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet" />
-    
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Component Styles -->
     <style>
-        /* Base Styles */
-        body {
-            font-family: 'Nunito', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5; /* Replace background image with a plain color */
-            color: #ffffff; /* White text for better contrast */
-        }
-        .nav-link {
-            margin-right: 2px;
-            margin-left: 2px;
-            font-weight: 600;
-            font-size: 20px;
-            color: #ffffff;
-            text-decoration: none;
-            font-family: 'Poppins', sans-serif;
-            padding: 8px 16px;
-            border-radius: 8px;
-            transition: background-color 0.3s, color 0.3s;
-            display: inline-block;
-        }
-        .nav-link:hover {
-            background-color: #ffffff;
-            color: #333333; 
-        }
-        
-        /* Form Container Styles */
-        .demo-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 20px;
-        }
+      /* Base Styles */
+      body {
+        font-family: "Nunito", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0; /* Light background for contrast */
+        color: #ffffff; /* White text for better contrast */
+      }
+      .nav-link {
+        margin-right: 2px;
+        margin-left: 2px;
+        font-weight: 600;
+        font-size: 20px;
+        color: #ffffff;
+        text-decoration: none;
+        font-family: "Poppins", sans-serif;
+        padding: 8px 16px;
+        border-radius: 8px;
+        transition: background-color 0.3s, color 0.3s;
+        display: inline-block;
+      }
+      .nav-link:hover {
+        background-color: #ffffff;
+        color: #333333;
+      }
+
+      /* Form Container Styles */
+      .demo-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 20px;
+      }
+      .demo-form {
+        max-width: 1000px;
+        margin: 0px auto;
+        padding: 20px;
+        /* background-image: url('images/DEMO_FORM_BG.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center; */
+        border: 1px solid #ffffff00; /* Deep blue border */
+        border-radius: 8px;
+        box-shadow: 0px 0px 0px 0px rgb(255, 255, 255);
+        color: #ffffff00; /* Deep blue text */
+        flex: 1;
+      }
+      .form-group {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      .form-group label {
+        width: 150px; /* Fixed width ensures alignment */
+        margin-right: 15px; /* Gap between label and input */
+        font-weight: bold;
+        color: #041242;
+        text-align: left; /* Left align label text */
+        white-space: nowrap;
+      }
+
+      .form-group input,
+      .form-group select {
+        flex: 1; /* Let the input take remaining space */
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+
+      button {
+        width: 100%;
+        padding: 10px;
+        background-color: #081747; /* Deep blue */
+        color: #ffffff; /* White text */
+        border: none;
+        border-radius: 5px;
+        font-size: 1em;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #000a29; /* Darker deep blue */
+      }
+      header h1 {
+        color: #ffffff; /* White text */
+      }
+      header h1 {
+        font-family: "Andika", serif; /* Special and premium font */
+        font-size: 3em; /* Adjust font size for emphasis */
+        color: #ffffff; /* Deep blue for premium look */
+        text-align: center;
+        padding-top: 20px;
+        margin-top: 10px; /* Add top margin for spacing */
+        margin-bottom: 10px; /* Add bottom margin for spacing */
+      }
+      /* Responsive Design */
+      @media (max-width: 1199px) {
         .demo-form {
-            max-width: 700px;
-            margin: px auto;
-            padding: 20px;
-            background-color: rgb(255, 255, 255); /* Add transparency to the form background */
-            border: 1px solid #ffffff; /* Deep blue border */
-            border-radius: 8px;
-            box-shadow: 0px 0px 0px 0px rgb(131 116 136);
-            color: #081747; /* Deep blue text */
-            flex: 1;
+          width: 90%; /* Adjust form width for smaller screens */
+          margin: 20px auto;
         }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-            color: #081747; /* Deep blue */
-        }
+
         .form-group input,
         .form-group select {
-            width: 60%;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+          width: 100%; /* Full width inputs for mobile */
         }
-        .form-group-inline {
-            display: flex;
-            gap: 10px;
-        }
-        .form-group-inline select {
-            flex: 1;
-        }
+
         button {
-            width: 100%;
-            padding: 10px;
-            background-color: #081747; /* Deep blue */
-            color: #ffffff; /* White text */
-            border: none;
-            border-radius: 5px;
-            font-size: 1em;
-            font-weight: bold;
-            cursor: pointer;
+          font-size: 1em;
+          padding: 10px;
         }
-        button:hover {
-            background-color: #000a29; /* Darker deep blue */
+      }
+
+      @media (max-width: 480px) {
+        .demo-form {
+          padding: 10px;
+        }
+
+        button {
+          font-size: 0.9em;
+          padding: 8px;
+        }
+      }
+      .info-sections {
+        flex: 2;
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+      }
+      .info-section {
+        background-color: rgba(255, 255, 255, 0.8); /* Light background */
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        padding: 20px;
+        border: 1px solid #ddd; /* Add border for square box effect */
+        width: 50%; /* Ensure consistent width */
+      }
+      .info-section h2 {
+        margin: 0; /* Remove margin */
+        padding: 10px 0; /* Add padding for spacing */
+      }
+      .info-section h3 {
+        margin: 0; /* Remove margin */
+        padding: 10px 0; /* Add padding for spacing */
+      }
+      .whatsapp-float {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #25d366;
+        color: #fff;
+        border-radius: 30px;
+        padding: 10px 15px;
+        display: flex;
+        align-items: center;
+        font-family: sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        text-decoration: none;
+        z-index: 1000;
+        transition: background-color 0.3s ease;
+      }
+
+      .whatsapp-float:hover {
+        background-color: #20b358;
+      }
+
+      .whatsapp-float img {
+        width: 28px;
+        height: 28px;
+        margin-right: 10px;
+      }
+
+      @media (max-width: 768px) {
+        .whatsapp-float {
+          font-size: 14px;
+          padding: 8px 12px;
+          bottom: 15px;
+          right: 15px;
+        }
+
+        .whatsapp-float img {
+          width: 24px;
+          height: 24px;
+          margin-right: 8px;
+        }
+      }
+
+      .header-ribbon {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff; /* White background */
+        color: #333; /* Dark text */
+        text-align: center;
+        padding: 10px 0;
+        z-index: 1100; /* Ensure it stays above other elements */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+      }
+
+      .header-ribbon a {
+        color: #001f3f; /* Deep blue for links */
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .header-ribbon a:hover {
+        text-decoration: none;
+      }
+      .header-ribbon a i {
+        margin-left: 10px;
+        color: #52009e; /* Adjust color to match your design */
+      }
+
+      header {
+        margin-top: 0px; /* Adjust to avoid overlap with the ribbon */
+      }
+      @media (max-width: 1199px) {
+        .demo-container {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .info-sections {
+          flex-direction: column;
+          width: 100%;
+        }
+
+        .info-section {
+          width: 100%;
         }
         header h1 {
-            color: #ffffff; /* White text */
+          font-size: 2em; /* Slightly smaller on smaller screens */
+          margin-top: 0%; /* Remove top margin on smaller screens */
+          margin-bottom: 0%; /* Remove bottom margin on smaller screens */
+          padding-left: 10%;
+          padding-right: 10%;
         }
+      }
+      header h1 {
+        color: #ffffff; /* Deep blue for readability on white */
+        font-size: 30px;
+        margin: 20px 0 10px;
+        margin-top: 30px;
+        text-align: center;
+      }
+      /* Header must be relative for absolute children */
+      header {
+        position: relative;
+        padding-bottom: 10px; /* Add bottom padding to prevent overlap */
+      }
 
-        /* Responsive Design */
-        @media (max-width: 1199px) {
-            .demo-form {
-                width: 90%; /* Adjust form width for smaller screens */
-                margin: 20px auto;
-            }
+      /* Tutor Registration Button */
+      .header-tutor-btn {
+        position: absolute;
+        bottom: 10px;
+        right: 20px;
+        background-color: #ffffff;
+        color: #000000;
+        padding: 10px 18px;
+        border-radius: 6px;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 14px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        z-index: 10;
+        white-space: nowrap;
+      }
 
-            .form-group input,
-            .form-group select {
-                width: 100%; /* Full width inputs for mobile */
-            }
-
-            button {
-                font-size: 1em;
-                padding: 10px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .demo-form {
-                padding: 15px;
-            }
-
-            button {
-                font-size: 0.9em;
-                padding: 8px;
-            }
-        }
-        .info-sections {
-            flex: 2;
-            display: flex;
-            flex-direction: row;
-            gap: 20px;
-        }
-        .info-section {
-            background-color: rgba(255, 255, 255, 0.8); /* Light background */
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            padding: 20px;
-            border: 1px solid #ddd; /* Add border for square box effect */
-            width: 50%; /* Ensure consistent width */
-        }
-        .info-section h2,
-        .info-section h3 {
-            margin: 0; /* Remove margin */
-            padding: 10px 0; /* Add padding for spacing */
-        }
-  .whatsapp-float {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #25d366;
-    color: #fff;
-    border-radius: 30px;
-    padding: 10px 15px;
-    display: flex;
-    align-items: center;
-    font-family: sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-    text-decoration: none;
-    z-index: 1000;
-    transition: background-color 0.3s ease;
-  }
-
-  .whatsapp-float:hover {
-    background-color: #20b358;
-  }
-
-  .whatsapp-float img {
-    width: 28px;
-    height: 28px;
-    margin-right: 10px;
-  }
-
-  @media (max-width: 768px) {
-    .whatsapp-float {
-      font-size: 14px;
-      padding: 8px 12px;
-      bottom: 15px;
-      right: 15px;
-    }
-
-    .whatsapp-float img {
-      width: 24px;
-      height: 24px;
-      margin-right: 8px;
-    }
-  }
-
-        .header-ribbon {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: #ffffff; /* White background */
-            color: #333; /* Dark text */
-            text-align: center;
-            padding: 10px 0;
-            z-index: 1100; /* Ensure it stays above other elements */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-        }
-
-        .header-ribbon a {
-            color: #001f3f; /* Deep blue for links */
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .header-ribbon a:hover {
-            text-decoration: none;
+      /* Hover effect */
+      .header-tutor-btn:hover {
+        background-color: #ffffff;
+        transform: scale(1.05);
+      }
+      /* Responsive fix for mobile */
+      @media (max-width: 1199px) {
+        .header-tutor-btn {
+          position: static;
+          display: none; /* Hide on smaller screens */
+          margin-top: 0px;
+          margin-left: 0;
+          padding: 8px 14px;
+          font-size: 13px;
         }
 
         header {
-            margin-top: 0px; /* Adjust to avoid overlap with the ribbon */
+          text-align: center;
+          padding-bottom: 10px; /* Adjust padding for mobile */
         }
-        @media (max-width: 1199px) {
-    .demo-container {
-        flex-direction: column;
-        align-items: center;
-    }
+      }
 
-    .info-sections {
-        flex-direction: column;
+      /* Footer styling */
+      footer {
+        background-color: #001f3f; /* Deep blue */
+        color: #ffffff; /* White text */
+        position: relative;
+        bottom: 0;
         width: 100%;
-    }
-
-    .info-section {
-        width: 100%;
-    }
-}
-header h1 {
-    color: #ffffff; /* Deep blue for readability on white */
-    font-size: 30px;
-    margin: 20px 0 10px;
-    margin-top: 30px;
-    text-align: center;
-}
-/* Header must be relative for absolute children */
-header {
-    position: relative;
-    padding-bottom: 10px; /* Add bottom padding to prevent overlap */
-}
-
-/* Tutor Registration Button */
-.header-tutor-btn {
-    position: absolute;
-    bottom: 10px;
-    right: 20px;
-    background-color: #ffffff;
-    color: #000000;
-    padding: 10px 18px;
-    border-radius: 6px;
-    font-weight: bold;
-    text-decoration: none;
-    font-size: 14px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    z-index: 10;
-    white-space: nowrap;
-}
-
-/* Hover effect */
-.header-tutor-btn:hover {
-    background-color: #ffffff;
-    transform: scale(1.05);
-}
-
-/* Responsive fix for mobile */
-@media (max-width: 1199px) {
-    .header-tutor-btn {
-        position: static;
-        display: inline-block;
-        margin-top: 0px;
-        margin-left: 0;
-        padding: 8px 14px;
-        font-size: 13px;
-    }
-
-    header {
+        font-family: "Poppins", sans-serif;
+      }
+      footer h3 {
+        font-family: "Poppins", sans-serif;
+        font-weight: 300; /* Semi-bold */
+      }
+      footer ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      footer ul li {
+        margin-bottom: 10px;
+      }
+      footer a {
+        color: #ffffff; /* White text */
+        text-decoration: none;
+      }
+      footer a:hover {
+        text-decoration: underline;
+      }
+      footer {
+        background-color: #001f3f; /* Deep blue */
+        color: #ffffff; /* White text */
         text-align: center;
-        padding-bottom: 10px; /* Adjust padding for mobile */
-    }
-}
+        padding: 10px;
+      }
+      @media (max-width: 480px) {
+        footer {
+          font-size: 0.8em;
+          gap: 10px; /* Smaller gap between sections */
+        }
+        footer h3 {
+          font-size: 1.2em; /* Smaller header font size */
+          margin-bottom: 0%;
+        }
+        footer ul li {
+          margin-bottom: 2px; /* Smaller spacing between items */
+        }
+      }
 
-</style>
-</head>
-<body>
+      /* Place title and hamburger in one line */
+      .header-flex {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-evenly;
+      }
+      /* Hide hamburger by default (for large screens) */
+      .menu-wrapper {
+        display: none;
+      }
+      /* Show hamburger only on small screens */
+      @media (max-width: 768px) {
+        .nav-link {
+          display: none; /* hide nav links on small screens */
+        }
+        .menu-wrapper {
+          display: inline-block;
+          position: relative;
+        }
+        .hamburger {
+          font-size: 30px;
+          color: #ffffff;
+          background-color: transparent;
+          background: none;
+          border: none;
+          cursor: pointer;
+        }
+        .options-menu {
+          display: none;
+          width: 170px;
+          position: absolute;
+          text-align: left;
+          top: 40px;
+          left: 7px;
+          background-color: white;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          padding: 10px;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+          z-index: 100;
+        }
+        .options-menu a {
+          display: block;
+          padding: 8px;
+          text-decoration: none;
+          color: #000000;
+        }
+        .options-menu a:hover {
+          background-color: #ffffff;
+        }
+        .info-grid-item {
+          width: 100%; /* Full width on small screens */
+          padding: 15px;
+          text-align: center; /* Center align text on small screens */
+        }
+        .info-grid-item h2 {
+          font-size: 1.5em; /* Adjust heading size for small screens */
+          margin-bottom: 10px;
+        }
+        .info-grid-item img {
+          font-size: 1.2em; /* Adjust image size for small screens */
+          text-align: left; /* Align text to the left */
+        }
+      }
+
+      @media (max-width: 600px) {
+        .form-group {
+          flex-direction: column;
+          align-items: flex-start; /* Align input with label */
+        }
+
+        .form-group label {
+          width: 100%;
+          margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group select {
+          width: 100%;
+        }
+      }
+    </style>
+    <style>
+      .form-group {
+        margin-bottom: 1.5rem;
+        position: relative;
+        font-family: Arial, sans-serif;
+      }
+
+      .form-group label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 8px;
+        color: #333;
+      }
+
+      .time-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+      }
+
+      .time-wrapper input[type="time"] {
+        width: 100%;
+        padding: 10px 12px 10px 36px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 16px;
+        transition: border 0.3s ease;
+      }
+
+      .time-wrapper input[type="time"]:focus {
+        border-color: #007bff;
+        outline: none;
+      }
+
+      .time-wrapper .icon {
+        position: absolute;
+        left: 10px;
+        color: #666;
+        font-size: 18px;
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    rel="stylesheet"
+  />
+  <body>
     <!-- Navigation Header -->
     <div class="header-ribbon">
-        <p>Welcome to Tutor Brainz! </p>
+      <p>
+        <a href="https://www.instagram.com/tutor_brainz/" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://wa.me/8248544385" target="_blank">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://facebook.com/YOUR_FACEBOOK_PAGE" target="_blank">
+          <i class="fab fa-facebook"></i>
+        </a>
+        &nbsp; &nbsp; Welcome to Tutor Brainz!
+        <a href="review.html">Learn More</a>
+      </p>
     </div>
 
     <!-- Header Section -->
-  <header class="blog-header">
-    <h1>Book a Free Demo - Tutor Brainz</h1>
-    <a href="home.html" class="nav-link">Home</a>
-    <a href="blog.html" class="nav-link">Blog</a>
-    <a href="syllabus.html" class="nav-link">Syllabus</a>
-    <a href="tutor-register.html" class="header-tutor-btn">Tutor Registration</a>
-  </header>
+    <header class="blog-header">
+      <div class="header-flex">
+        <div class="menu-wrapper">
+          <button class="hamburger" onclick="toggleOptions()">&#9776;</button>
+          <div class="options-menu" id="optionsMenu">
+            <a href="home.html"
+              ><img
+                width="25px"
+                src="images/home_icon.png"
+                alt="Home"
+                style="margin-right: 10px"
+              />Home</a
+            >
+            <a href="syllabus.html"
+              ><img
+                width="25px"
+                src="images/Syllabus_Icon.png"
+                alt="Home"
+                style="margin-right: 10px"
+              />Syllabus</a
+            >
+            <a href="achievements.html"
+              ><img
+                width="25px"
+                src="images/achievements_icon.png"
+                alt="Achievements"
+                style="margin-right: 10px"
+              />Achievements</a
+            >
+          </div>
+        </div>
+        <h1>TUTOR BRAINZ</h1>
+      </div>
+      <!-- <h4>Explore expert advice, study hacks, and resources to help your child thrive.</h4> -->
+      <!-- Nav links for desktop -->
+      <div class="nav-links">
+        <a href="home.html" class="nav-link">HOME</a>
+        <a href="syllabus.html" class="nav-link">SYLLABUS</a>
+        <a href="achievements.html" class="nav-link">ACHIEVEMENTS</a>
+        <a href="tutor-register.html" class="header-tutor-btn"
+          >Tutor Registration</a
+        >
+      </div>
+    </header>
 
     <!-- Main Form Section -->
     <main>
-        <div id="message"></div>
+      <div id="message"></div>
 
-        <div class="demo-container">
+      <div class="demo-container">
+        <!-- Demo Booking Form -->
+        <form id="demoForm" class="demo-form">
+          <div class="form-group">
+            <label for="name"
+              >Student Name: <span style="color: red">*</span></label
+            >
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Please Enter Student's Name"
+              required
+            />
+          </div>
 
-            <!-- Demo Booking Form -->
-            <form id="demoForm" class="demo-form">
-                <div class="form-group">
-                    <label for="name">Student Name: <span style="color: red;">*</span></label>
-                    <input type="text" id="name" name="name" required>
-                </div>
+          <div class="form-group">
+            <label for="topic">Grade: <span style="color: red">*</span></label>
+            <input
+              type="text"
+              id="topic"
+              name="topic"
+              placeholder="Please Enter Student's Grade/Year"
+              required
+            />
+          </div>
 
-                <div class="form-group">
-                    <label for="topic">Grade:</label>
-                    <input type="text" id="topic" name="topic">
-                </div>
+          <div class="form-group">
+            <label for="email">Email: <span style="color: red">*</span></label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Please Enter your Email address"
+              required
+            />
+          </div>
 
-                <div class="form-group">
-                    <label for="email">Email: <span style="color: red;">*</span></label>
-                    <input type="email" id="email" name="email" required>
-                </div>
+          <div class="form-group">
+            <label for="subject"
+              >Demo Subject: <span style="color: red">*</span></label
+            >
+            <select id="subject" name="subject" required>
+              <option value="">Select Subject</option>
+              <option value="Math">Mathematics</option>
+              <option value="Science">Science</option>
+              <option value="English">English</option>
+              <option value="Coding">Coding</option>
+              <option value="Python">Python</option>
+              <option value="Scratch">Scratch</option>
+              <option value="Java">Java</option>
+              <option value="C">C</option>
+              <option value="Computers">Computers</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
 
+          <div class="form-group">
+            <label for="topic"
+              >Demo Topic: <span style="color: red">*</span></label
+            >
+            <input
+              type="text"
+              id="topic"
+              name="topic"
+              placeholder="Please Enter Demo Topic"
+              required
+            />
+          </div>
 
-                <div class="form-group">
-                    <label for="subject">Demo Subject: <span style="color: red;">*</span></label>
-                    <select id="subject" name="subject" required>
-                        <option value="">Select Subject</option>
-                        <option value="Math">Mathematics</option>
-                        <option value="Science">Science</option>
-                        <option value="English">English</option>
-                        <option value="Coding">Coding</option>
-                        <option value="Python">Python</option>
-                        <option value="Scratch">Scratch</option>
-                        <option value="Java">Java</option>
-                        <option value="C">C</option>
-                        <option value="Computers">Computers</option>
-                        <option value="Other">Other</option>
-                    </select>
-                </div>
+          <div class="form-group">
+            <label for="date"
+              >Preferred Date: <span style="color: red">*</span></label
+            >
+            <input type="date" id="date" name="date" required />
+          </div>
 
-                <div class="form-group">
-                    <label for="topic">Demo Topic:</label>
-                    <input type="text" id="topic" name="topic">
-                </div>
+          <div class="form-group">
+            <label for="timeZone"
+              >Time Zone: <span style="color: red">*</span></label
+            >
+            <select id="timeZone" name="timeZone" required>
+              <option value="">Select Timezone</option>
+              <option value="UTC-12:00">(UTC-12:00) Baker Island Time</option>
+              <option value="UTC-11:00">
+                (UTC-11:00) Niue Time, Samoa Standard Time
+              </option>
+              <option value="UTC-10:00">
+                (UTC-10:00) Hawaii-Aleutian Standard Time
+              </option>
+              <option value="UTC-09:00">
+                (UTC-09:00) Alaska Standard Time
+              </option>
+              <option value="UTC-08:00">
+                (UTC-08:00) Pacific Standard Time
+              </option>
+              <option value="UTC-07:00">
+                (UTC-07:00) Mountain Standard Time
+              </option>
+              <option value="UTC-06:00">
+                (UTC-06:00) Central Standard Time
+              </option>
+              <option value="UTC-05:00">
+                (UTC-05:00) Eastern Standard Time
+              </option>
+              <option value="UTC-04:00">
+                (UTC-04:00) Atlantic Standard Time
+              </option>
+              <option value="UTC-03:00">
+                (UTC-03:00) Argentina Time, Brazil Time
+              </option>
+              <option value="UTC-02:00">(UTC-02:00) South Georgia Time</option>
+              <option value="UTC-01:00">
+                (UTC-01:00) Azores Standard Time
+              </option>
+              <option value="UTC+00:00">(UTC+00:00) Greenwich Mean Time</option>
+              <option value="UTC+01:00">
+                (UTC+01:00) Central European Time
+              </option>
+              <option value="UTC+02:00">
+                (UTC+02:00) Eastern European Time
+              </option>
+              <option value="UTC+03:00">
+                (UTC+03:00) Moscow Standard Time
+              </option>
+              <option value="UTC+04:00">(UTC+04:00) Gulf Standard Time</option>
+              <option value="UTC+05:30">
+                (UTC+05:30) Indian Standard Time
+              </option>
+              <option value="UTC+06:00">
+                (UTC+06:00) Bangladesh Standard Time
+              </option>
+              <option value="UTC+07:00">(UTC+07:00) Indochina Time</option>
+              <option value="UTC+08:00">(UTC+08:00) China Standard Time</option>
+              <option value="UTC+09:00">(UTC+09:00) Japan Standard Time</option>
+              <option value="UTC+10:00">
+                (UTC+10:00) Australian Eastern Standard Time
+              </option>
+              <option value="UTC+11:00">
+                (UTC+11:00) Solomon Islands Time
+              </option>
+              <option value="UTC+12:00">
+                (UTC+12:00) New Zealand Standard Time
+              </option>
+              <option value="UTC+13:00">(UTC+13:00) Tonga Time</option>
+              <option value="UTC+14:00">(UTC+14:00) Line Islands Time</option>
+            </select>
+          </div>
 
-
-                <div class="form-group">
-                    <label for="date">Preferred Date: <span style="color: red;">*</span></label>
-                    <input type="date" id="date" name="date" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="timeZone">Time Zone: <span style="color: red;">*</span></label>
-                    <select id="timeZone" name="timeZone" required>
-                        <option value="">Select Timezone</option>
-                        <option value="UTC-12:00">(UTC-12:00) Baker Island Time</option>
-                        <option value="UTC-11:00">(UTC-11:00) Niue Time, Samoa Standard Time</option>
-                        <option value="UTC-10:00">(UTC-10:00) Hawaii-Aleutian Standard Time</option>
-                        <option value="UTC-09:00">(UTC-09:00) Alaska Standard Time</option>
-                        <option value="UTC-08:00">(UTC-08:00) Pacific Standard Time</option>
-                        <option value="UTC-07:00">(UTC-07:00) Mountain Standard Time</option>
-                        <option value="UTC-06:00">(UTC-06:00) Central Standard Time</option>
-                        <option value="UTC-05:00">(UTC-05:00) Eastern Standard Time</option>
-                        <option value="UTC-04:00">(UTC-04:00) Atlantic Standard Time</option>
-                        <option value="UTC-03:00">(UTC-03:00) Argentina Time, Brazil Time</option>
-                        <option value="UTC-02:00">(UTC-02:00) South Georgia Time</option>
-                        <option value="UTC-01:00">(UTC-01:00) Azores Standard Time</option>
-                        <option value="UTC+00:00">(UTC+00:00) Greenwich Mean Time</option>
-                        <option value="UTC+01:00">(UTC+01:00) Central European Time</option>
-                        <option value="UTC+02:00">(UTC+02:00) Eastern European Time</option>
-                        <option value="UTC+03:00">(UTC+03:00) Moscow Standard Time</option>
-                        <option value="UTC+04:00">(UTC+04:00) Gulf Standard Time</option>
-                        <option value="UTC+05:30">(UTC+05:30) Indian Standard Time</option>
-                        <option value="UTC+06:00">(UTC+06:00) Bangladesh Standard Time</option>
-                        <option value="UTC+07:00">(UTC+07:00) Indochina Time</option>
-                        <option value="UTC+08:00">(UTC+08:00) China Standard Time</option>
-                        <option value="UTC+09:00">(UTC+09:00) Japan Standard Time</option>
-                        <option value="UTC+10:00">(UTC+10:00) Australian Eastern Standard Time</option>
-                        <option value="UTC+11:00">(UTC+11:00) Solomon Islands Time</option>
-                        <option value="UTC+12:00">(UTC+12:00) New Zealand Standard Time</option>
-                        <option value="UTC+13:00">(UTC+13:00) Tonga Time</option>
-                        <option value="UTC+14:00">(UTC+14:00) Line Islands Time</option>
-                    </select>
-                </div>                
-
-                <div class="form-group">
-                    <label for="time">Preferred Time: <span style="color: red;">*</span></label>
-                    <div class="form-group-inline">
-                        <select id="hour" name="hour" required>
-                            <option value="">Hour</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                            <option value="11">11</option>
-                            <option value="12">12</option>
-                        </select>
-                        <select id="minute" name="minute" required>
-                            <option value="">Minute</option>
-                            <option value="00">00</option>
-                            <option value="15">15</option>
-                            <option value="30">30</option>
-                            <option value="45">45</option>
-                        </select>
-                        <select id="timePeriod" name="timePeriod" required>
-                            <option value="AM">AM</option>
-                            <option value="PM">PM</option>
-                        </select>
-                    </div>
-                </div>
-
-
-
-                <div class="form-group" id="otherSubjectGroup" style="display: none;">
-                    <label for="otherSubject">Please specify the subject:</label>
-                    <input type="text" id="otherSubject" name="otherSubject">
-                </div>
-
-
-                <div class="form-group">
-                    <label for="phone">Phone Number: <span style="color: red;">*</span></label>
-                    <div class="form-group-inline">
-                        <select id="countryCode" name="countryCode" required>
-                            <option value="+1" selected>+1 (USA/Canada)</option>
-                            <option value="+91">+91 (India)</option>
-                            <option value="+44">+44 (UK)</option>
-                            <option value="+61">+61 (Australia)</option>
-                            <option value="+81">+81 (Japan)</option>
-                            <option value="+49">+49 (Germany)</option>
-                            <option value="+33">+33 (France)</option>
-                            <option value="+86">+86 (China)</option>
-                            <option value="+7">+7 (Russia)</option>
-                            <option value="+55">+55 (Brazil)</option>
-                            <option value="+34">+34 (Spain)</option>
-                            <option value="+39">+39 (Italy)</option>
-                            <option value="+27">+27 (South Africa)</option>
-                            <option value="+82">+82 (South Korea)</option>
-                            <option value="+62">+62 (Indonesia)</option>
-                            <option value="+63">+63 (Philippines)</option>
-                            <option value="+64">+64 (New Zealand)</option>
-                            <option value="+20">+20 (Egypt)</option>
-                            <option value="+971">+971 (UAE)</option>
-                            <option value="+880">+880 (Bangladesh)</option>
-                            <option value="+94">+94 (Sri Lanka)</option>
-                            <option value="+66">+66 (Thailand)</option>
-                            <option value="+65">+65 (Singapore)</option>
-                            <option value="+60">+60 (Malaysia)</option>
-                            <option value="+98">+98 (Iran)</option>
-                            <option value="+90">+90 (Turkey)</option>
-                            <option value="+31">+31 (Netherlands)</option>
-                            <option value="+32">+32 (Belgium)</option>
-                            <option value="+46">+46 (Sweden)</option>
-                            <option value="+47">+47 (Norway)</option>
-                            <option value="+48">+48 (Poland)</option>
-                            <option value="+351">+351 (Portugal)</option>
-                            <option value="+30">+30 (Greece)</option>
-                            <option value="+41">+41 (Switzerland)</option>
-                            <option value="+43">+43 (Austria)</option>
-                            <option value="+52">+52 (Mexico)</option>
-                            <option value="+54">+54 (Argentina)</option>
-                            <option value="+56">+56 (Chile)</option>
-                            <option value="+57">+57 (Colombia)</option>
-                            <option value="+58">+58 (Venezuela)</option>
-                            <option value="+234">+234 (Nigeria)</option>
-                            <option value="+254">+254 (Kenya)</option>
-                            <option value="+256">+256 (Uganda)</option>
-                            <option value="+255">+255 (Tanzania)</option>
-                            <option value="+212">+212 (Morocco)</option>
-                            <option value="+213">+213 (Algeria)</option>
-                            <option value="+216">+216 (Tunisia)</option>
-                            <option value="+218">+218 (Libya)</option>
-                        </select>
-                        <input type="tel" id="phone" name="phone" placeholder="Enter phone number" required>
-                    </div>
-                </div>
-
-                <button type="submit">Book Demo</button>
-            </form>
-
-            <!-- Information Grid -->
-            <div class="info-grid-container" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 800px; margin: 0px auto; padding: 20px; background-color: #f5f5f5; border-radius: 8px; box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);">
-                <div class="info-grid-item" style="background-color: #f5f5f5; padding: 15px; border-radius: 8px; text-align: justify; box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);">
-                    <img src="images\Why_Choose_Us.jpg" alt="Why Choose Us" style="width: 20%; height: auto; border-radius: 8px; margin-bottom: 10px;">
-                    <h2>Why Choose Us?</h2>
-                    <h3>We provide personalized learning experiences tailored to your needs.</h3>
-                </div>
-                <div class="info-grid-item" style="background-color: #f5f5f5; padding: 15px; border-radius: 8px; text-align: justify; box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);">
-                    <img src="images\Expert_Tutor.jpg" alt="Expert Tutors" style="width: 20%; height: auto; border-radius: 8px; margin-bottom: 10px;">
-                    <h2>Expert Tutors</h2>
-                    <h3>Learn from highly qualified and experienced professionals.</h3>
-                </div>
-                <div class="info-grid-item" style="background-color: #f5f5f5; padding: 15px; border-radius: 8px; text-align: justify; box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);">
-                    <img src="images\Flexible_Scheduling.jpg" alt="Flexible Scheduling" style="width: 20%; height: auto; border-radius: 8px; margin-bottom: 10px;">
-                    <h2>Flexible Scheduling</h2>
-                    <h3>Book classes at your convenience, anytime, anywhere.</h3>
-                </div>
-                <div class="info-grid-item" style="background-color: #f5f5f5; padding: 15px; border-radius: 8px; text-align: justify; box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);">
-                    <img src="images\Proven_Result.jpg" alt="Proven Results" style="width: 20%; height: auto; border-radius: 8px; margin-bottom: 10px;">
-                    <h2>Proven Results</h2>
-                    <h3>Our students achieve higher scores and greater confidence.</h3>
-                </div>
-                <div class="info-grid-item" style="background-color: #f5f5f5; padding: 15px; border-radius: 8px; text-align: justify; box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);">
-                    <img src="images\Affordable_price.jpg" alt="Flexible Scheduling" style="width: 20%; height: auto; border-radius: 8px; margin-bottom: 10px;">
-                    <h2>Affordable Pricing</h2>
-                    <h3>Get the best education at competitive rates.</h3>
-                </div>
-                <div class="info-grid-item" style="background-color: #f5f5f5; padding: 15px; border-radius: 8px; text-align: justify; box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);">
-                    <img src="images\Interactive_Learning.jpg" alt="Flexible Scheduling" style="width: 20%; height: auto; border-radius: 8px; margin-bottom: 10px;">
-                    <h2>Interactive Learning</h2>
-                    <h3>Engage with tutors through interactive tools and methods.</h3>
-                </div>
+          <div class="form-group">
+            <label for="preferredTime">
+              Preferred Time: <span style="color: red">*</span>
+            </label>
+            <div class="time-wrapper">
+              <span class="icon">🕒</span>
+              <input
+                type="time"
+                id="preferredTime"
+                name="preferredTime"
+                required
+                min="09:00"
+                max="21:00"
+                title="Please select a time between 9:00 AM and 9:00 PM"
+                />
             </div>
+          </div>
+
+          <div class="form-group">
+            <label for="phone"
+              >Phone Number: <span style="color: red">*</span></label
+            >
+            <div class="form-group-inline">
+              <select id="countryCode" name="countryCode" required>
+                <option value="+1" selected>+1 (USA/Canada)</option>
+                <option value="+91">+91 (India)</option>
+                <option value="+44">+44 (UK)</option>
+                <option value="+61">+61 (Australia)</option>
+                <option value="+81">+81 (Japan)</option>
+                <option value="+49">+49 (Germany)</option>
+                <option value="+33">+33 (France)</option>
+                <option value="+86">+86 (China)</option>
+                <option value="+7">+7 (Russia)</option>
+                <option value="+55">+55 (Brazil)</option>
+                <option value="+34">+34 (Spain)</option>
+                <option value="+39">+39 (Italy)</option>
+                <option value="+27">+27 (South Africa)</option>
+                <option value="+82">+82 (South Korea)</option>
+                <option value="+62">+62 (Indonesia)</option>
+                <option value="+63">+63 (Philippines)</option>
+                <option value="+64">+64 (New Zealand)</option>
+                <option value="+20">+20 (Egypt)</option>
+                <option value="+971">+971 (UAE)</option>
+                <option value="+880">+880 (Bangladesh)</option>
+                <option value="+94">+94 (Sri Lanka)</option>
+                <option value="+66">+66 (Thailand)</option>
+                <option value="+65">+65 (Singapore)</option>
+                <option value="+60">+60 (Malaysia)</option>
+                <option value="+98">+98 (Iran)</option>
+                <option value="+90">+90 (Turkey)</option>
+                <option value="+31">+31 (Netherlands)</option>
+                <option value="+32">+32 (Belgium)</option>
+                <option value="+46">+46 (Sweden)</option>
+                <option value="+47">+47 (Norway)</option>
+                <option value="+48">+48 (Poland)</option>
+                <option value="+351">+351 (Portugal)</option>
+                <option value="+30">+30 (Greece)</option>
+                <option value="+41">+41 (Switzerland)</option>
+                <option value="+43">+43 (Austria)</option>
+                <option value="+52">+52 (Mexico)</option>
+                <option value="+54">+54 (Argentina)</option>
+                <option value="+56">+56 (Chile)</option>
+                <option value="+57">+57 (Colombia)</option>
+                <option value="+58">+58 (Venezuela)</option>
+                <option value="+234">+234 (Nigeria)</option>
+                <option value="+254">+254 (Kenya)</option>
+                <option value="+256">+256 (Uganda)</option>
+                <option value="+255">+255 (Tanzania)</option>
+                <option value="+212">+212 (Morocco)</option>
+                <option value="+213">+213 (Algeria)</option>
+                <option value="+216">+216 (Tunisia)</option>
+                <option value="+218">+218 (Libya)</option>
+              </select>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="Please Enter Phone/Whatsapp number"
+                required
+              />
+            </div>
+          </div>
+
+          <button type="submit">Book Demo</button>
+        </form>
+
+        <!-- Information Grid -->
+        <div
+          class="info-grid-container"
+          style="
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 800px;
+            margin: 0px auto;
+            padding: 20px;
+            background-image: url('images/Demo_BackGround.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            border-radius: 8px;
+            box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
+          "
+        >
+          <div
+            class="info-grid-item"
+            style="
+              background-color: #0000007e;
+              padding: 15px;
+              border-radius: 8px;
+              text-align: left;
+              box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
+            "
+          >
+            <img
+              src="images\Why_Choose_Us.jpg"
+              alt="Why Choose Us"
+              style="
+                width: 20%;
+                height: auto;
+                border-radius: 8px;
+                margin-bottom: 10px;
+              "
+            />
+            <h2 style="color: rgb(255, 238, 0)">Why Choose Us?</h2>
+            <h3 style="color: rgb(255, 255, 255)">
+              We provide personalized learning experiences tailored to your
+              needs.
+            </h3>
+          </div>
+          <div
+            class="info-grid-item"
+            style="
+              background-color: #0000007e;
+              padding: 15px;
+              border-radius: 8px;
+              text-align: left;
+              box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
+            "
+          >
+            <img
+              src="images\Expert_Tutor.jpg"
+              alt="Expert Tutors"
+              style="
+                width: 20%;
+                height: auto;
+                border-radius: 8px;
+                margin-bottom: 10px;
+              "
+            />
+            <h2 style="color: rgb(255, 238, 0)">Expert Tutors</h2>
+            <h3 style="color: rgb(255, 255, 255)">
+              Learn from highly qualified and experienced professionals.
+            </h3>
+          </div>
+          <div
+            class="info-grid-item"
+            style="
+              background-color: #0000007e;
+              padding: 15px;
+              border-radius: 8px;
+              text-align: left;
+              box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
+            "
+          >
+            <img
+              src="images\Flexible_Scheduling.jpg"
+              alt="Flexible Scheduling"
+              style="
+                width: 20%;
+                height: auto;
+                border-radius: 8px;
+                margin-bottom: 10px;
+              "
+            />
+            <h2 style="color: rgb(255, 238, 0)">Flexible Scheduling</h2>
+            <h3 style="color: rgb(255, 255, 255)">
+              Book classes at your convenience, anytime, anywhere.
+            </h3>
+          </div>
+          <div
+            class="info-grid-item"
+            style="
+              background-color: #0000007e;
+              padding: 15px;
+              border-radius: 8px;
+              text-align: left;
+              box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
+            "
+          >
+            <img
+              src="images\Proven_Result.jpg"
+              alt="Proven Results"
+              style="
+                width: 20%;
+                height: auto;
+                border-radius: 8px;
+                margin-bottom: 10px;
+              "
+            />
+            <h2 style="color: rgb(255, 238, 0)">Proven Results</h2>
+            <h3 style="color: rgb(255, 255, 255)">
+              Our students achieve higher scores and greater confidence.
+            </h3>
+          </div>
+          <div
+            class="info-grid-item"
+            style="
+              background-color: #0000007e;
+              padding: 15px;
+              border-radius: 8px;
+              text-align: left;
+              box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
+            "
+          >
+            <img
+              src="images\Affordable_price.jpg"
+              alt="Flexible Scheduling"
+              style="
+                width: 20%;
+                height: auto;
+                border-radius: 8px;
+                margin-bottom: 10px;
+              "
+            />
+            <h2 style="color: rgb(255, 238, 0)">Affordable Pricing</h2>
+            <h3 style="color: rgb(255, 255, 255)">
+              Get the best education at competitive rates.
+            </h3>
+          </div>
+          <div
+            class="info-grid-item"
+            style="
+              background-color: #0000007e;
+              padding: 15px;
+              border-radius: 8px;
+              text-align: left;
+              box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
+            "
+          >
+            <img
+              src="images\Interactive_Learning.jpg"
+              alt="Flexible Scheduling"
+              style="
+                width: 20%;
+                height: auto;
+                border-radius: 8px;
+                margin-bottom: 10px;
+              "
+            />
+            <h2 style="color: rgb(255, 238, 0)">Interactive Learning</h2>
+            <h3 style="color: rgb(255, 255, 255)">
+              Engage with tutors through interactive tools and methods.
+            </h3>
+          </div>
         </div>
+      </div>
     </main>
-  <!-- WhatsApp Chat Support Icon -->
-<!-- WhatsApp Floating Button -->
-<a href="https://wa.me/918248544385?text=Hello%2C%20I%20would%20love%20to%20know%20more?" 
-   class="whatsapp-float" 
-   target="_blank" 
-   rel="noopener noreferrer"
-   aria-label="Chat with us on WhatsApp">
-  <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp Chat">
-  <span>WhatsApp Us</span>
-</a>
-    <!-- Footer Section -->
-    <footer style="background-color: #000203; color: #ffffff; padding: 20px; text-align: center; position: static;">
-        <div style="display: flex; justify-content: space-around; flex-wrap: wrap; padding: 20px;">
-            <div>
-                <h3 style="color: #ffffff;">About us</h3>
-                <ul style="list-style: none; padding: 0;">
-                    <li><a href="home.html#how-it-works" style="color: #add5e9; text-decoration: none;">How it Works</a></li>
-                    <li><a href="#" style="color: #add5e9; text-decoration: none;">Affiliate Program</a></li>
-                    <li><a href="#" style="color: #add5e9; text-decoration: none;">Education Partners</a></li>
-                    <li><a href="#" style="color: #add5e9; text-decoration: none;">We are Hiring!</a></li>
-                    <li><a href="#" style="color: #add5e9; text-decoration: none;">Become a Teacher</a></li>
-                </ul>
-            </div>
-            <div>
-                <h3 style="color: #ffffff;">Support</h3>
-                <p>Need any Help?</p>
-                <p><a href="mailto:tutorbrainz.pvt@gmail.com" style="color: #add5e9; text-decoration: none;">tutorbrainz.pvt@gmail.com</a></p>
-            </div>
-            <div>
-                <h3 style="color: #ffffff;">Follow us</h3>
-                <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; align-items: flex-start;">
-                    <li>
-                        <a href="https://www.instagram.com/tutor_brainz/" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: #add5e9;">
-                            <img src="images/Instagram.jpg" alt="Instagram" style="width: 20px; height: 20px; margin-right: 5px;">
-                            Instagram
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" style="display: flex; align-items: center; text-decoration: none; color: #add5e9;">
-                            <img src="images/Facebook.jpg" alt="Facebook" style="width: 20px; height: 20px; margin-right: 5px;">
-                            Facebook
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" style="display: flex; align-items: center; text-decoration: none; color: #add5e9;">
-                            <img src="images/Youtube.jpg" alt="YouTube" style="width: 20px; height: 20px; margin-right: 5px;">
-                            YouTube
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" style="display: flex; align-items: center; text-decoration: none; color: #add5e9;">
-                            <img src="images/Twitter.jpg" alt="Twitter" style="width: 20px; height: 20px; margin-right: 5px;">
-                            Twitter
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div>
-                <h3 style="color: #ffffff;">Contact</h3>
-                <p>+91 82485 44385</p>
-                <p>+91 87874 52406</p>
-                <p>Banglore, Karnataka</p>
-            </div>
+    <!-- WhatsApp Chat Support Icon -->
+    <!-- WhatsApp Floating Button -->
+    <a
+      href="https://wa.me/918248544385?text=Hello%2C%20I%20would%20love%20to%20know%20more?"
+      class="whatsapp-float"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Chat with us on WhatsApp"
+    >
+      <img
+        src="https://img.icons8.com/color/48/000000/whatsapp--v1.png"
+        alt="WhatsApp Chat"
+      />
+      <span>WhatsApp Us</span>
+    </a>
+    <!-- /* Footer Section */ -->
+    <footer>
+      <div
+        style="
+          display: flex;
+          justify-content: space-around;
+          flex-wrap: nowrap;
+          padding: 0%;
+          gap: 5px;
+        "
+      >
+        <div>
+          <h3 style="color: #ffffff; text-align: left">About us</h3>
+          <ul style="list-style: none; padding: 0; text-align: left">
+            <li><a href="home.html#how-it-works">How it Works</a></li>
+            <li><a href="#">Affiliate Program</a></li>
+            <li><a href="#">Education Partners</a></li>
+            <li><a href="#">We are Hiring!</a></li>
+            <li><a href="#">Become a Teacher</a></li>
+          </ul>
         </div>
-        <p style="color: #ffffff;font-weight: bold;font-size: 1.2rem;">&copy; 2025 Tutor Brainz. All rights reserved.</p>
+        <div>
+          <h3 style="color: #ffffff">Support</h3>
+          <p style="color: #ffffff; margin-bottom: 0%">Need any Help?</p>
+          <p style="margin-bottom: 0%">
+            <a href="mailto:tutorbrainz.pvt@gmail.com"
+              >tutorbrainz.pvt@gmail.com</a
+            >
+          </p>
+          <br />
+          <h3 style="color: #ffffff; margin-top: 0%; margin-bottom: 5%">
+            Contact
+          </h3>
+          <p style="color: #ffffff; margin-bottom: 0%">+91 82485 44385</p>
+          <p style="color: #ffffff; margin-bottom: 0%">+91 87874 52406</p>
+          <p style="color: #ffffff; margin-bottom: 0%">Banglore, Karnataka</p>
+        </div>
+        <div>
+          <h3 style="color: #ffffff; text-align: justify">Follow us</h3>
+          <ul
+            style="
+              list-style: none;
+              padding: 0;
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+              align-items: flex-start;
+            "
+          >
+            <li>
+              <a
+                href="https://www.instagram.com/tutor_brainz/"
+                target="_blank"
+                style="
+                  display: flex;
+                  align-items: center;
+                  text-decoration: none;
+                "
+              >
+                <img
+                  src="images/Instagram.jpg"
+                  alt="Instagram"
+                  style="width: 20px; height: 20px; margin-right: 5px"
+                />
+                Instagram
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                style="
+                  display: flex;
+                  align-items: center;
+                  text-decoration: none;
+                "
+              >
+                <img
+                  src="images/Facebook.jpg"
+                  alt="Facebook"
+                  style="width: 20px; height: 20px; margin-right: 5px"
+                />
+                Facebook
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                style="
+                  display: flex;
+                  align-items: center;
+                  text-decoration: none;
+                "
+              >
+                <img
+                  src="images/Youtube.jpg"
+                  alt="YouTube"
+                  style="width: 20px; height: 20px; margin-right: 5px"
+                />
+                YouTube
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                style="
+                  display: flex;
+                  align-items: center;
+                  text-decoration: none;
+                "
+              >
+                <img
+                  src="images/Twitter.jpg"
+                  alt="Twitter"
+                  style="width: 20px; height: 20px; margin-right: 5px"
+                />
+                Twitter
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p style="color: #ffffff; font-weight: bold; font-size: 1.2rem">
+        &copy; 2025 Tutor Brainz. All rights reserved.
+      </p>
     </footer>
 
     <!-- Form Submission Script -->
     <script src="config.js"></script>
     <script>
-        /**
-         * Demo Booking Form Script
-         * -----------------------
-         * Handles form submission and API interaction for demo class bookings
-         * 
-         * Features:
-         * - Form validation
-         * - API integration
-         * - Error handling
-         * - Success/failure notifications
-         */
+      /**
+       * Demo Booking Form Script
+       * -----------------------
+       * Handles form submission and API interaction for demo class bookings
+       *
+       * Features:
+       * - Form validation
+       * - API integration
+       * - Error handling
+       * - Success/failure notifications
+       */
 
-        const apiBaseURL = (typeof config !== "undefined" && config.baseUrl) ? 
-          config.baseUrl : "http://127.0.0.1:5000";
+      const apiBaseURL =
+        typeof config !== "undefined" && config.baseUrl
+          ? config.baseUrl
+          : "http://127.0.0.1:5000";
 
-        /**
-         * Form Submission Handler
-         * Processes the demo booking form and sends data to backend
-         */
-        document.getElementById('demoForm').addEventListener('submit', async function (e) {
-            e.preventDefault();
+      /**
+       * Form Submission Handler
+       * Processes the demo booking form and sends data to backend
+       */
+      document
+        .getElementById("demoForm")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault();
 
-            // Collect form data
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
-                subject: document.getElementById('subject').value,
-                date: document.getElementById('date').value
-            };
+          // Collect form data
+          const formData = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            phone: document.getElementById("phone").value,
+            subject: document.getElementById("subject").value,
+            date: document.getElementById("date").value,
+          };
 
-            console.log('Form data being sent:', formData); // Add this debug log
+          console.log("Form data being sent:", formData); // Add this debug log
 
-            try {
-                // Send API request
-                const response = await fetch('http://localhost:5000/api/demos', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    },
-                    body: JSON.stringify(formData)
-                });
+          try {
+            // Send API request
+            const response = await fetch("http://localhost:5000/api/demos", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+              },
+              body: JSON.stringify(formData),
+            });
 
-                console.log('Response:', response); // Add this debug log
+            console.log("Response:", response); // Add this debug log
 
-                // Handle response
-                const result = await response.json();
-                if (response.ok) {
-                    alert('Demo booked successfully! Redirecting to the home page...');
-                    window.location.href = 'home.html';
-                } else {
-                    throw new Error(result.error || 'Failed to book demo');
-                }
-            } catch (error) {
-                console.error('Fetch error:', error); // Add this debug log
-                alert('An error occurred. Please try again.');
+            // Handle response
+            const result = await response.json();
+            if (response.ok) {
+              alert(
+                "Demo booked successfully! Redirecting to the home page..."
+              );
+              window.location.href = "home.html";
+            } else {
+              throw new Error(result.error || "Failed to book demo");
             }
+          } catch (error) {
+            console.error("Fetch error:", error); // Add this debug log
+            alert("An error occurred. Please try again.");
+          }
         });
     </script>
-</body>
+
+    <script>
+      function toggleOptions() {
+        const menu = document.getElementById("optionsMenu");
+        menu.style.display = menu.style.display === "block" ? "none" : "block";
+      }
+
+      // Close menu when clicking outside
+      window.addEventListener("click", function (event) {
+        const menu = document.getElementById("optionsMenu");
+        const wrapper = document.querySelector(".menu-wrapper");
+        if (!wrapper.contains(event.target)) {
+          menu.style.display = "none";
+        }
+      });
+    </script>
+  </body>
 </html>

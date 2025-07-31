@@ -177,6 +177,11 @@
     html, body {
       overflow-x: hidden; /* Prevent horizontal scrolling on mobile */
     }
+    .info-banner-demo h5{
+      font-size: 1.5em !important; /* Ensure heading is visible */
+      color: #010e27 !important; /* Ensure heading is visible */
+      text-align: center !important; /* Center align heading */
+    }
     /* Responsive adjustments for mobile */
     @media (max-width: 1200px) {
       .info-banner-demo {
@@ -184,6 +189,10 @@
         gap: 20px !important;
         padding: 10px !important;
         max-width: 90%; /* Reduce container width for tablets */
+      }
+      .info-banner-demo h5 {
+        font-size: 1em !important; /* Smaller font size for tablets */
+        color: #010e27 !important; /* Ensure heading is visible */
       }
       .info-banner-demo section,
       .info-banner-demo div {
@@ -1268,9 +1277,9 @@ footer {
       <div class="menu-wrapper">
         <button class="hamburger" onclick="toggleOptions()">&#9776;</button>
         <div class="options-menu" id="optionsMenu">
-          <a href="review.html"><img width="25px" src="images/review_Icon.png" alt="Home" style="margin-right: 10px;" />Reviews</a>
-          <a href="syllabus.html"><img width="25px" src="images/Syllabus_Icon.png" alt="Home" style="margin-right: 10px;" />Syllabus</a>
-          <a href="achievements.html"><img width="25px" src="images/achievements_icon.png" alt="Home" style="margin-right: 10px;" />Achievements</a>
+          <a href="review.html"><img width="25px" src="images/review_Icon.png" alt="Reviews" style="margin-right: 10px;" />Reviews</a>
+          <a href="syllabus.html"><img width="25px" src="images/Syllabus_Icon.png" alt="Syllabus" style="margin-right: 10px;" />Syllabus</a>
+          <a href="achievements.html"><img width="25px" src="images/achievements_icon.png" alt="Achievements" style="margin-right: 10px;" />Achievements</a>
         </div>
       </div>
     </div>
@@ -1291,7 +1300,7 @@ footer {
       <!-- Demo Section -->
       <section style="flex: 1; position: relative; max-width: 1000px; height: 700px; margin-top: 20px; padding: 20px; text-align: center;">
         <h2 style="color: #000d14; margin-bottom: 15px; text-align: center;">Step Into Our Classroom</h2>
-        <p style="color: #2b0000; margin-bottom: 20px; text-align: justify;">Watch these videos to learn more about how Tutor Brainz can help you achieve academic success.</p>
+        <h5 style="color: #2b0000; margin-bottom: 20px; text-align: justify;">Watch these videos to learn more about how Tutor Brainz can help you achieve academic success.</h5>
         <div style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
           <!-- First Video -->
           <div style="flex: 1;  text-align: left;">

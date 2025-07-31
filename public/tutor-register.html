@@ -255,14 +255,17 @@ header h1 {
     color: #ffffff; /* Deep blue for premium look */
     text-align: center;
     padding-top: 20px;
-    margin-top: 0%; /* Remove top margin for better alignment */
-    margin-bottom: 0%; /* Remove bottom margin for better alignment */
+    margin-top: 10px; /* Add top margin for spacing */
+    margin-bottom: 10px; /* Add bottom margin for spacing */
+    
 }
 @media (max-width: 768px) {
     header h1 {
         font-size: 2em; /* Slightly smaller on smaller screens */
         margin-top: 0%; /* Remove top margin on smaller screens */
         margin-bottom: 0%; /* Remove bottom margin on smaller screens */
+        padding-left: 10%;
+        padding-right: 10%;
     }
 }
 /* Header must be relative for absolute children */
@@ -375,22 +378,150 @@ header {
     }
 }
 
+  /* Place title and hamburger in one line */
+  .header-flex {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-around;
+  }
+  /* Hide hamburger by default (for large screens) */
+  .menu-wrapper {
+    display: none;
+  }
+  /* Show hamburger only on small screens */
+  @media (max-width: 768px) {
+    
+    .header-flex {
+    display: flex;
+    gap: auto;
+    align-items: baseline;
+    justify-content: flex-start;
+  }
+
+
+
+    .nav-link {
+      display: none; /* hide nav links on small screens */
+    }
+    .menu-wrapper {
+      display: inline-block;
+      position: relative;
+    }
+    .hamburger {
+      font-size: 30px;
+      color: #ffffff;
+      background-color: transparent;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding-right: 10%;
+    }
+    .options-menu {
+      display: none;
+      width: 170px;
+      position: absolute;
+      text-align: left;
+      top: 40px;
+      left: 7px;
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      z-index: 100;
+    }
+    .options-menu a {
+      display: block;
+      padding: 8px;
+      text-decoration: none;
+      color: #000000;
+    }
+    .options-menu a:hover {
+      background-color: #ffffff;
+    }
+  }
+
+
+
+
+
+      /* Footer styling */
+    footer {
+      background-color: #001f3f; /* Deep blue */
+      color: #ffffff; /* White text */
+      position: relative;
+      bottom: 0;
+      width: 100%;
+      font-family: 'Poppins', sans-serif;
+    }
+    footer h3 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 300; /* Semi-bold */
+    }
+    footer ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    footer ul li {
+      margin-bottom: 10px;
+    }
+    footer a {
+      color: #ffffff; /* White text */
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+footer {
+      background-color: #001f3f; /* Deep blue */
+      color: #ffffff; /* White text */
+      text-align: center;
+      padding: 10px;
+    }
+    @media (max-width: 480px) {
+      footer {
+        font-size: 0.8em;
+        gap: 10px; /* Smaller gap between sections */
+      }   
+      footer h3 {
+        font-size: 1.2em; /* Smaller header font size */
+        margin-bottom: 0%;
+
+      }
+      footer ul li {
+        margin-bottom: 2px; /* Smaller spacing between items */
+      }
+    }
+
+
+    
+
   </style>
 </head>
 <body>
-    <!-- Navigation Header -->
-    <!-- <div class="header-ribbon">
-        <p>Welcome to Tutor Brainz! </p>
-    </div> -->
-
     <!-- Header Section -->
-  <header class="blog-header" style="color: #001f3f;">
-    <h1>TUTOR BRAINZ</h1>
-    <a href="home.html" class="nav-link">Home</a>
-    <a href="blog.html" class="nav-link">Blog</a>
-    <a href="syllabus.html" class="nav-link">Syllabus</a>
-    <a href="demo.html" class="header-BookDemo-btn">Book a Free Trial</a>
-    <!-- <a href="tutor-register.html" class="header-tutor-btn">Tutor Registration</a> -->
+  <header class="blog-header">
+    <div class="header-flex">
+      <div class="menu-wrapper">
+        <button class="hamburger" onclick="toggleOptions()">&#9776;</button>
+        <div class="options-menu" id="optionsMenu">
+          <a href="home.html"><img width="25px" src="images/home_icon.png" alt="Home" style="margin-right: 10px;" />Home</a>
+          <a href="syllabus.html"><img width="25px" src="images/Syllabus_Icon.png" alt="Home" style="margin-right: 10px;" />Syllabus</a>
+          <a href="achievements.html"><img width="25px" src="images/achievements_icon.png" alt="Achievements" style="margin-right: 10px;" />Achievements</a>
+          <a href="demo.html"><img width="25px" src="images/Book_Demo_Icon.png" alt="Home" style="margin-right: 10px;" />Book Demo</a>
+        </div>
+      </div>
+      <h1>TUTOR BRAINZ</h1>
+    </div>
+
+    <!-- <h4>Explore expert advice, study hacks, and resources to help your child thrive.</h4> -->
+<!-- Nav links for desktop -->
+    <div class="nav-links">
+      <a href="home.html" class="nav-link">HOME</a>
+      <a href="syllabus.html" class="nav-link">SYLLABUS</a>
+      <a href="achievements.html" class="nav-link">ACHIEVEMENTS</a>
+    </div>
+
   </header>
     <main>
         <div class="container">
@@ -445,62 +576,61 @@ header {
   <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp Chat">
   <span>WhatsApp Us</span>
 </a>
-  <!-- Footer Section -->
-    <footer style="background-color: #001f3f; color: #ffffff; padding: 20px; text-align: center; position: static;">
-        <div style="display: flex; justify-content: space-around; flex-wrap: wrap; padding: 20px;">
-            <div>
-                <h3 style="color: #ffffff;">About us</h3>
-                <ul style="list-style: none; padding: 0;">
-                    <li><a href="home.html#how-it-works" style="color: #add5e9; text-decoration: none;">How it Works</a></li>
-                    <li><a href="#" style="color: #add5e9; text-decoration: none;">Affiliate Program</a></li>
-                    <li><a href="#" style="color: #add5e9; text-decoration: none;">Education Partners</a></li>
-                    <li><a href="#" style="color: #add5e9; text-decoration: none;">We are Hiring!</a></li>
-                    <li><a href="#" style="color: #add5e9; text-decoration: none;">Become a Teacher</a></li>
-                </ul>
-            </div>
-            <div>
-                <h3 style="color: #ffffff;">Support</h3>
-                <p>Need any Help?</p>
-                <p><a href="mailto:tutorbrainz.pvt@gmail.com" style="color: #add5e9; text-decoration: none;">tutorbrainz.pvt@gmail.com</a></p>
-            </div>
-            <div>
-                <h3 style="color: #ffffff;">Follow us</h3>
-                <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; align-items: flex-start;">
-                    <li>
-                        <a href="https://www.instagram.com/tutor_brainz/" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: #add5e9;">
-                            <img src="images/Instagram.jpg" alt="Instagram" style="width: 20px; height: 20px; margin-right: 5px;">
-                            Instagram
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" style="display: flex; align-items: center; text-decoration: none; color: #add5e9;">
-                            <img src="images/Facebook.jpg" alt="Facebook" style="width: 20px; height: 20px; margin-right: 5px;">
-                            Facebook
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" style="display: flex; align-items: center; text-decoration: none; color: #add5e9;">
-                            <img src="images/Youtube.jpg" alt="YouTube" style="width: 20px; height: 20px; margin-right: 5px;">
-                            YouTube
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" style="display: flex; align-items: center; text-decoration: none; color: #add5e9;">
-                            <img src="images/Twitter.jpg" alt="Twitter" style="width: 20px; height: 20px; margin-right: 5px;">
-                            Twitter
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div>
-                <h3 style="color: #ffffff;">Contact</h3>
-                <p>+91 82485 44385</p>
-                <p>+91 87874 52406</p>
-                <p>Banglore, Karnataka</p>
-            </div>
-        </div>
-        <p style="color: #ffffff;font-weight: bold;font-size: 1.2rem;">&copy; 2025 Tutor Brainz. All rights reserved.</p>
-    </footer>
+   <!-- /* Footer Section */ -->
+  <footer>
+    <div style="display: flex; justify-content: space-around; flex-wrap: nowrap; padding: 0%; gap: 5px;">
+      <div>
+        <h3 style="color: #ffffff; text-align: left;">About us</h3>
+        <ul style="list-style: none; padding: 0; text-align:left;">
+          <li><a href="home.html#how-it-works">How it Works</a></li>
+          <li><a href="#">Affiliate Program</a></li>
+          <li><a href="#">Education Partners</a></li>
+          <li><a href="#">We are Hiring!</a></li>
+          <li><a href="#">Become a Teacher</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="color: #ffffff;">Support</h3>
+        <p style="color: #ffffff; margin-bottom: 0%;">Need any Help?</p>
+        <p style="margin-bottom: 0%;"><a href="mailto:tutorbrainz.pvt@gmail.com">tutorbrainz.pvt@gmail.com</a></p>
+        <br>
+        <h3 style="color: #ffffff; margin-top: 0%; margin-bottom: 5%;">Contact</h3>
+        <p style="color: #ffffff; margin-bottom: 0%;">+91 82485 44385</p>
+        <p style="color: #ffffff; margin-bottom: 0%;">+91 87874 52406</p>
+        <p style="color: #ffffff; margin-bottom: 0%;">Banglore, Karnataka</p>
+      </div>
+      <div>
+        <h3 style="color: #ffffff; text-align: justify;">Follow us</h3>
+        <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; align-items: flex-start;">
+          <li>
+            <a href="https://www.instagram.com/tutor_brainz/" target="_blank" style="display: flex; align-items: center; text-decoration: none;">
+              <img src="images/Instagram.jpg" alt="Instagram" style="width: 20px; height: 20px; margin-right: 5px;">
+              Instagram
+            </a>
+          </li>
+          <li>
+            <a href="#" style="display: flex; align-items: center; text-decoration: none;">
+              <img src="images/Facebook.jpg" alt="Facebook" style="width: 20px; height: 20px; margin-right: 5px;">
+              Facebook
+            </a>
+          </li>
+          <li>
+            <a href="#" style="display: flex; align-items: center; text-decoration: none;">
+              <img src="images/Youtube.jpg" alt="YouTube" style="width: 20px; height: 20px; margin-right: 5px;">
+              YouTube
+            </a>
+          </li>
+          <li>
+            <a href="#" style="display: flex; align-items: center; text-decoration: none;">
+              <img src="images/Twitter.jpg" alt="Twitter" style="width: 20px; height: 20px; margin-right: 5px;">
+              Twitter
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <p style="color: #ffffff;font-weight: bold;font-size: 1.2rem;">&copy; 2025 Tutor Brainz. All rights reserved.</p>
+  </footer>
 
 <script>
 document.getElementById("tutorForm").addEventListener("submit", function(e) {
@@ -548,6 +678,24 @@ document.getElementById("tutorForm").addEventListener("submit", function(e) {
   });
 });
 </script>
+
+
+<script>
+  function toggleOptions() {
+    const menu = document.getElementById("optionsMenu");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+  }
+
+  // Close menu when clicking outside
+  window.addEventListener("click", function(event) {
+    const menu = document.getElementById("optionsMenu");
+    const wrapper = document.querySelector(".menu-wrapper");
+    if (!wrapper.contains(event.target)) {
+      menu.style.display = "none";
+    }
+  });
+</script>
+
 
 </body>
 </html>
